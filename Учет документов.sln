@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Учет документов", "Учет документов\Учет документов.vbproj", "{36F44DEB-CE54-4E2A-873B-1ECE91CD61A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|х32 = Debug|х32
+		Release|х32 = Release|х32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36F44DEB-CE54-4E2A-873B-1ECE91CD61A6}.Debug|х32.ActiveCfg = Release|Any CPU
+		{36F44DEB-CE54-4E2A-873B-1ECE91CD61A6}.Debug|х32.Build.0 = Release|Any CPU
+		{36F44DEB-CE54-4E2A-873B-1ECE91CD61A6}.Release|х32.ActiveCfg = Release|Any CPU
+		{36F44DEB-CE54-4E2A-873B-1ECE91CD61A6}.Release|х32.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
