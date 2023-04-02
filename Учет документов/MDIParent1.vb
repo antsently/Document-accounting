@@ -23,16 +23,24 @@ Public Class MDIParent1
         Connector.Close()
         Prava()
         OtchetGurnal = "Программа успешно запущена " & DateString & " " & TimeString : ZapGurnal()
+    End Sub
 
+    Private Sub КаскадомToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles КаскадомToolStripMenuItem.Click
         Me.LayoutMdi(MdiLayout.Cascade)
+    End Sub
+
+    Private Sub СлеваНаправоToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles СлеваНаправоToolStripMenuItem.Click
         Me.LayoutMdi(MdiLayout.TileVertical)
+    End Sub
+
+    Private Sub СверхуВнизToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles СверхуВнизToolStripMenuItem.Click
         Me.LayoutMdi(MdiLayout.TileHorizontal)
+    End Sub
+
+    Private Sub ЗакрытьВсеToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ЗакрытьВсеToolStripMenuItem.Click
         For Each ChildForm As Form In Me.MdiChildren
             ChildForm.Close()
         Next
-        MsgBox(Chr(10) & "Программа для ведения учета регистрационных документов 3Ф_РАНХиГС", vbOKOnly + vbInformation, "Информация")
-        MsgBox(Chr(10) & "Автор: Алехин Денис Владимирович", vbOKOnly + vbInformation, "Информация")
-        MsgBox(Chr(10) & "Данная программа защищена законом об авторских правах и международными соглашениями. Незаконное воспроизведение или распространение данной программы или любой ее части влечет гражданску и уголовную ответственность" & Chr(13) & "Данная программа специально написана для Общего Отдела - 3Ф_РАНХиГС", vbOKOnly + vbInformation, "Информация")
     End Sub
 
     Private Sub ВыходToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ВыходToolStripMenuItem.Click
@@ -40,6 +48,9 @@ Public Class MDIParent1
         Me.Close()
     End Sub
 
+    Private Sub СтрокаСостоянияToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles СтрокаСостоянияToolStripMenuItem.Click
+
+    End Sub
     Private Sub StatusStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles StatusStrip1.ItemClicked
         'Me.StatusStrip1.Visible = Me.StatusBarToolStripMenuItem.Checked
     End Sub
@@ -119,26 +130,26 @@ Public Class MDIParent1
     End Sub
 
     Private Sub МастерПостроенияОтчетовToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles МастерПостроенияОтчетовToolStripMenuItem.Click
-        'Master.Close()
-        'Master.Show()
+        Master.Close()
+        Master.Show()
         OtchetGurnal = "Открыт мастер запросов " & DateString & " " & TimeString : ZapGurnal()
     End Sub
 
     Private Sub ПоставитьНаКонтрольToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ПоставитьНаКонтрольToolStripMenuItem.Click
-        'Kontrol.Close()
-        'Kontrol.Show()
+        Kontrol.Close()
+        Kontrol.Show()
         OtchetGurnal = "Контроль открыт " & DateString & " " & TimeString : ZapGurnal()
     End Sub
 
     Private Sub НастройкиToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles НастройкиToolStripMenuItem.Click
-        'Settings.Close()
-        'Settings.Show()
+        Settings.Close()
+        Settings.Show()
         OtchetGurnal = "Открыты настройки " & DateString & " " & TimeString : ZapGurnal()
     End Sub
 
     Private Sub ЖурналСобытийToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ЖурналСобытийToolStripMenuItem.Click
-        'Gurnal.Close()
-        'Gurnal.Show()
+        Gurnal.Close()
+        Gurnal.Show()
         OtchetGurnal = "Открыт журнал " & DateString & " " & TimeString : ZapGurnal() : ZapGurnal()
     End Sub
 

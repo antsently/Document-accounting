@@ -216,16 +216,34 @@
     <Compile Include="Form9.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Gurnal.Designer.vb">
+      <DependentUpon>Gurnal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gurnal.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Intro.Designer.vb">
       <DependentUpon>Intro.vb</DependentUpon>
     </Compile>
     <Compile Include="Intro.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Kontrol.Designer.vb">
+      <DependentUpon>Kontrol.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Kontrol.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Licenses.Designer.vb">
       <DependentUpon>Licenses.vb</DependentUpon>
     </Compile>
     <Compile Include="Licenses.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master.Designer.vb">
+      <DependentUpon>Master.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MDIParent1.Designer.vb">
@@ -249,6 +267,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Settings2.Designer.vb">
+      <DependentUpon>Settings2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Settings2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.vb">
+      <DependentUpon>Settings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.vb">
+      <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -294,6 +324,9 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form20.resx">
+      <DependentUpon>Form20.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.vb</DependentUpon>
     </EmbeddedResource>
@@ -315,11 +348,17 @@
     <EmbeddedResource Include="Form9.resx">
       <DependentUpon>Form9.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gurnal.resx">
+      <DependentUpon>Gurnal.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Intro.resx">
       <DependentUpon>Intro.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Licenses.resx">
       <DependentUpon>Licenses.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master.resx">
+      <DependentUpon>Master.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MDIParent1.resx">
       <DependentUpon>MDIParent1.vb</DependentUpon>
@@ -329,6 +368,12 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings2.resx">
+      <DependentUpon>Settings2.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
