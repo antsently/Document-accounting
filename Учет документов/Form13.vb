@@ -126,7 +126,7 @@ Public Class Form13
             Dim i As Integer
             Dim Y As Integer
             Dim z As Integer
-            OtchetGurnal = "Запущен Экспорт Excel Приказы по АХД" & DateString & " " & TimeString : ZapGurnal()
+            OtchetGurnal = "Запущен Экспорт Excel Докладные и служебные записки" & DateString & " " & TimeString : ZapGurnal()
             myXL = New Excel.Application
             myWB = myXL.Workbooks.Add
             myWS = myWB.Worksheets(1)
@@ -279,12 +279,12 @@ Public Class Form13
         ListView1.Columns.Add("Oтмeткa о помещении в дело")
         ListView1.Items.Clear()
         Try
-            OtchetGurnal = "Загрузка приказы по АХД" & DateString & "" & TimeString : ZapGurnal()
+            OtchetGurnal = "Загрузка Докладные и служебные записи" & DateString & "" & TimeString : ZapGurnal()
             Dim Poisk As String
             If ToolStripTextBox1.Text = "" Then
-                Poisk = "SELECT * FROM [Докладные и служебные записки] ORDER BY [Приказы по АХД].[Код] DESC"
+                Poisk = "SELECT * FROM [Докладные и служебные записки] ORDER BY [Докладные и служебные записки].[Код] DESC"
             Else
-                Poisk = "SELECT * FROM [Докладные и служебные записки] where (([Приказы по АХД].[" & ToolStripComboBox1.Text & "]) Like '%" & ToolStripTextBox1.Text & "%')"
+                Poisk = "SELECT * FROM [Докладные и служебные записки] where (([Докладные и служебные записки].[" & ToolStripComboBox1.Text & "]) Like '%" & ToolStripTextBox1.Text & "%')"
             End If
             Dim DataReader As OleDbDataReader
             Dim Command As New OleDbCommand(Poisk, Connector)

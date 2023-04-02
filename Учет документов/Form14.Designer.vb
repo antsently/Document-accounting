@@ -190,7 +190,7 @@ Partial Class Form14
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(599, 167)
+        Me.ClientSize = New System.Drawing.Size(599, 166)
         Me.Controls.Add(Me.TextBox14)
         Me.Controls.Add(Me.TextBox13)
         Me.Controls.Add(Me.TextBox12)
@@ -212,7 +212,6 @@ Partial Class Form14
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Form14"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds
         Me.Text = "Докладные и служебные записки"
         Me.ResumeLayout(False)
         Me.PerformLayout()
