@@ -2,6 +2,7 @@
 Imports Microsoft.Office.Interop
 
 Public Class Kontrol
+
     Private Sub Kontrol_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.MdiParent = MDIParent1
         Prava()
