@@ -2,6 +2,26 @@
 Imports Microsoft.Office.Interop
 
 Public Class Settings
+    Dim openFileDialog1 As New OpenFileDialog()
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        openFileDialog1.ShowDialog()
+        If openFileDialog1.FileName <> "" Then
+            DataBaseFileName = openFileDialog1.FileName
+            My.Settings.Save()
+        End If
+    End Sub
+
+    Private Sub ListBox1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles ListBox1.MouseDoubleClick
+        Try
+            ToolStripButton2_Click(Me, New EventArgs)
+            OtchetGurnal = "Запуск редактирования пользователя " & DateString & " " & TimeString : ZapGurnal()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            OtchetGurnal = "Ошибка " & ex.Message & DateString & " " & TimeString : ZapGurnal()
+        End Try
+    End Sub
+
     Private Sub Settings_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.MdiParent = MDIParent1
         Try
@@ -30,7 +50,7 @@ Public Class Settings
 
     Sub Dobavlenie_zap()
         Try
-            Dim Command As New OleDbCommand("Insert Into [Пользователи] ([Код], [Фамилия], [Имя],[Отчества], [Права], [Пароль]) values ('" & p1 & "', '" & p2 & "','" & p3 & "','" & p4 & "', '" & p5 & "', '" & p6 & "')", Connector)
+            Dim Command As New OleDbCommand("Insert Into [Пользователи] ([Код], [Фамилия], [Имя],[Отчество], [Права], [Пароль]) values ('" & p1 & "', '" & p2 & "','" & p3 & "','" & p4 & "', '" & p5 & "', '" & p6 & "')", Connector)
             Connector.Open()
             Command.ExecuteNonQuery()
             Connector.Close()
@@ -44,7 +64,7 @@ Public Class Settings
 
     Sub Editor_zap()
         Try
-            Dim Command As New OleDbCommand("UPDATE [Пользователи] SET [Фамилия]='" & p2 & "', [Имя]='" & p3 & "', [Отчества]='" & p4 & "', [Права]='" & p5 & "', [Пароль]='" & p6 & "' WHERE ([Код] Like '" & ListBox1.SelectedIndex + 1 & "')", Connector)
+            Dim Command As New OleDbCommand("UPDATE [Пользователи] SET [Фамилия]='" & p2 & "', [Имя]='" & p3 & "', [Отчество]='" & p4 & "', [Права]='" & p5 & "', [Пароль]='" & p6 & "' WHERE ([Код] Like '" & ListBox1.SelectedIndex + 1 & "')", Connector)
             Connector.Open()
             Command.ExecuteNonQuery()
             Connector.Close()
@@ -89,6 +109,16 @@ Public Class Settings
         OtchetGurnal = "Запущено добавление нового пользователя " & DateString & " " & TimeString : ZapGurnal()
     End Sub
 
+    Private Sub ToolStripButton3_Click(sender As Object, e As EventArgs) Handles ToolStripButton3.Click
+        Settings_Load(Me, New EventArgs)
+        OtchetGurnal = "Обновление параметров настроек " & DateString & " " & TimeString : ZapGurnal()
+    End Sub
+
+    Private Sub ToolStripButton4_Click(sender As Object, e As EventArgs) Handles ToolStripButton4.Click
+        Удалить()
+        OtchetGurnal = "Запущена процедура удаления пользователя " & DateString & " " & TimeString : ZapGurnal()
+    End Sub
+
     Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
         Try
             If ListBox1.SelectedIndex < 0 Then
@@ -109,16 +139,6 @@ Public Class Settings
             MessageBox.Show(ex.Message)
             OtchetGurnal = "Ошибка " & ex.Message & DateString & " " & TimeString : ZapGurnal()
         End Try
-    End Sub
-
-    Private Sub ToolStripButton3_Click(sender As Object, e As EventArgs) Handles ToolStripButton3.Click
-        Settings_Load(Me, New EventArgs)
-        OtchetGurnal = "Обновление параметров настроек " & DateString & " " & TimeString : ZapGurnal()
-    End Sub
-
-    Private Sub ToolStripButton4_Click(sender As Object, e As EventArgs) Handles ToolStripButton4.Click
-        Удалить()
-        OtchetGurnal = "Запущена процедура удаления пользователя " & DateString & " " & TimeString : ZapGurnal()
     End Sub
 
     Private Sub TextBox5_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TextBox5.SelectedIndexChanged
@@ -165,6 +185,20 @@ Public Class Settings
         End Try
     End Sub
 
+    Private Sub ComboBox6_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox6.SelectedIndexChanged
+        Try
+            Dim Command As New OleDbCommand("UPDATE [Параметры] SET [Автообновление]='" & ComboBox6.Text & "'", Connector)
+            Connector.Open()
+            Command.ExecuteNonQuery()
+            Connector.Close()
+            SettingsAutoObnovlenie = ComboBox6.Text
+            OtchetGurnal = "Автообновление " & SettingsAutoObnovlenie & " " & DateString & " " & TimeString : ZapGurnal()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            OtchetGurnal = "Ошибка " & ex.Message & DateString & " " & TimeString : ZapGurnal()
+        End Try
+    End Sub
+
     Private Sub ComboBox3_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox3.SelectedIndexChanged
         Try
             Dim Command As New OleDbCommand("UPDATE [Параметры] SET [Архивировать БД]='" & ComboBox3.Text & "'", Connector)
@@ -203,30 +237,6 @@ Public Class Settings
             SettingsOtkatBD = ComboBox5.Text
             OtchetGurnal = "Востановление в исходный вид БД " & SettingsOtkatBD & " " & DateString & " " &
             TimeString : ZapGurnal()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-            OtchetGurnal = "Ошибка " & ex.Message & DateString & " " & TimeString : ZapGurnal()
-        End Try
-    End Sub
-
-    Private Sub ComboBox6_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox6.SelectedIndexChanged
-        Try
-            Dim Command As New OleDbCommand("UPDATE [Параметры] SET [Автообновление]='" & ComboBox6.Text & "'", Connector)
-            Connector.Open()
-            Command.ExecuteNonQuery()
-            Connector.Close()
-            SettingsAutoObnovlenie = ComboBox6.Text
-            OtchetGurnal = "Автообновление " & SettingsAutoObnovlenie & " " & DateString & " " & TimeString : ZapGurnal()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-            OtchetGurnal = "Ошибка " & ex.Message & DateString & " " & TimeString : ZapGurnal()
-        End Try
-    End Sub
-
-    Private Sub ListBox1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles ListBox1.MouseDoubleClick
-        Try
-            ToolStripButton2_Click(Me, New EventArgs)
-            OtchetGurnal = "Запуск редактирования пользователя " & DateString & " " & TimeString : ZapGurnal()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
             OtchetGurnal = "Ошибка " & ex.Message & DateString & " " & TimeString : ZapGurnal()

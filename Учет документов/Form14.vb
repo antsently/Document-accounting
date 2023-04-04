@@ -32,7 +32,7 @@
                 p5 = TextBox5.Text
                 p6 = TextBox6.Text
                 p7 = TextBox7.Text
-                Form9.Dobavlenie_zap()
+                Form13.Dobavlenie_zap()
                 Me.Close()
                 OtchetGurnal = "Добавление записи Докладные и служебные записки " & DateString & " " & TimeString : ZapGurnal()
             End If
@@ -44,7 +44,7 @@
             p5 = TextBox5.Text
             p6 = TextBox6.Text
             p7 = TextBox7.Text
-            Form9.Editor_zap()
+            Form13.Editor_zap()
             Me.Close()
             OtchetGurnal = "Редактирование записи Докладные и служебные записки " & DateString & " " & TimeString : ZapGurnal()
         End If

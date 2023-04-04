@@ -117,9 +117,60 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Label1.Text" xml:space="preserve">
-    <value>Данная программа защищена законом об авторских правах и международными соглашениями. 
-Незаконное воспроизведение или распространение данной программы или любой ее части влечется гражданскуой и уголовной ответственностью
-Данная программа специально написана для Общего Отдела - 3Ф_РАНХиГС</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ДобавитьЗаписьToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
+        dAAAEnQB3mYfeAAAAZNJREFUeF7tmklOxFAMRLOBOzAcEASnA67AIKbDAHsoL1r6+o4ULLuUEvhJtbP8
+        qtPJzkvTNE3TNE3T/Jpj5Bp5Qr6Q751jHR6RK8S6UTlF3pG1Igp5Q04QCvZ0lX/8Ia/IEVKOvfZrQsVc
+        IuXYNz9KbhD7JPbmDLlFxm4PSDmfyCgxsQrnyNjtAylnFFjUoPejC5LQ+9EFSej96IIk9H50QRJ6P7og
+        Cb1ftUB9n6NaoL7PUS1Q3+eoFqjvc1QL1Pc5qgXq+xzVAvV9jmqB+j5HVDDPZ7NFdD5MVDDPZ7NFdD5M
+        VDDPZ7NFdD5MVDDPZ7NFdD5MtUB9n6NaoL7PUS1Q3+eoFqjvc1QL1Pc5qgXq+xzVAvV9jmqB+j4HXZCE
+        3o8uSELvRxckofejC5LQ+9EFSej96IIk9H52dDAK/t2BxHwiY2cpCg/BfvwdMnajnMjYHd4oUc4FUo6d
+        ydkd3ppQKc8I5UzOsCNEu8NbEyvkBaEdSh6wp2t3ePfIfDm2R6yDdbHXnvbPN03TNE3TNH+LZfkBFv3w
+        /ZbA5mgAAAAASUVORK5CYII=
+</value>
   </data>
+  <data name="ОбновитьToolStripMenuItem1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
+        dAAAEnQB3mYfeAAAAb5JREFUaEPtmT1KxUAUhaOtP1ip2An2ilZiI7gcXYLgMhS3YGNv4Sb8XYJoI9rr
+        OSEXLsPkkby5l7yB+8FHfnwvJ8eZkWCaIAjcOYO38BX+wr8RLgR78BHmbnCok3MCvyBv5gNewgO4AquB
+        IyEl7uAarBKZTiyxxBM1woUt06nakSD868QiXBOebHa68QZZZL898mEbvnRy34UfyCKr7ZE9W/AJMoO+
+        wx1ojgR4kJYQXcrIxa3hFOKTAa8tW73Prek0kwBL9EhwDfK3Lzlc8PIz05GRACtyJYjOcSmjA0rpK0HS
+        HPMyaUAJF5DXys3/XI5eR/xuEbmAEs5hbhH35fCz/E4x1kX6cM+JIiOJIkOJIiOJIkOJIiOJIimTPTp0
+        mBSZ9GGuI5czmlmPzGnArEfxEtKcuekrowO8ShCdU0yujAR4liCSY4ae/7LV+7l1ZIHkmKJHRusxEoJk
+        mJOW8SyxDpnx3R45wCnk/q9McAhZhDlucGSoJ1eQRa7bo0rZgPIS6ZQnamQZ3kOWeOCJGuFISIlPuAur
+        gW+8jiDXhEwnljiGk8ObmVdOp4UZidwN9smXRs/wBla7sIOgDprmH5oICXmpMccKAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="ContextMenuStrip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>124, 17</value>
+  </metadata>
+  <data name="УдалитьЗаписьToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
+        dAAAEnQB3mYfeAAAAqJJREFUaEPtmktOFkEURjsanagzNa4BTWQH4gaMGsMWCISIDDC6AWNcgjrzsRBd
+        gUIQELYAiTrQifidsi8py9sPQvNXEfokJ/Rf99bfdemuRwKVuCRfyz25X6iM7ZW8KBuhCK9zib6UjexK
+        km6GT2UyLRkjY23Eqi2dznGOhUyY01fISbERL7lkG+lMKISxkNIYCymNsRCwmJeTxobUoy0W6NPZy0lj
+        Q+rRFgt0JhTCWEhpHKkQi3k5aWxIPdpigT6dvZw0NqQebbFAZ0IhjIWUxpEKsZiXk8aG1KMtFujT2ctJ
+        Y0Pq0RYLdCYUwkf54e+lz0kppJNTUYjFvJw0dlg9zstZ+V5uyB+1XL+TxMhxafvi+MZpTho7rCn35Y70
+        cmO35T35H5aQizPyhbRxfJIP5ZS8UHtdLsnP0vKeS/oeYIFcWBE/5Zz8Z3AJxOYluVbMATkL4XWyIm7R
+        0JMZacXcpQFyFcKktTnBk4Cr8mn9M+WK5JW7HD5V1YKk71d5joZchbACcV/mhL1OTyRtX+Q1Gmq4po3Y
+        Cg3irFyVtD2ggQucNCyx3JffssGTsAFbMXER/OTJGI8k7W/5wAVOmk3JfVmdYtKBx9fxUwJWM2LsM+Fi
+        UnJeMr5J2vjzeEpcDHpFAH2J813hy63DcRsf+gYvJBdDvFo3JLHwauWCsxODYMc2+kz2eGlelrS/CZ8y
+        Ycsvxw5bfh/LuAgjLiZeftckbWH5zQUbIgdABsKxA9jsGKi3IdJGzDbERUnfLRk2xJxwimUwHDc4dvTl
+        tvwlf8s7NJQABz8rhmMHr0wTxHgSFEGfZ7IYmB9WDHLsYMdms+PfmpDViYltc4InQRFtJ+VscIrlAGgF
+        NcmcKOZ1aoJJywrE2YlV6nvtumSJJeZM7Kr6AyMju1u8sHnJAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="ContextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>309, 17</value>
+  </metadata>
+  <metadata name="ToolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>553, 17</value>
+  </metadata>
+  <metadata name="MenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>660, 17</value>
+  </metadata>
 </root>

@@ -46,7 +46,7 @@ Public Class Form1
             Connector.Close()
             ListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize)
             For Each columnheader In Me.ListView1.Columns
-                columnheader.Width = -3
+                columnheader.Width = -2
             Next
             OtchetGurnal = "Открыта книга исходящие " & DateString & " " & TimeString : ZapGurnal()
         Catch ex As Exception
@@ -75,7 +75,7 @@ Public Class Form1
             ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("Примечание")
             Form1_Load(Me, New EventArgs)
             For Each columnheader In Me.ListView1.Columns
-                columnheader.Width = -3
+                columnheader.Width = -2
             Next
             OtchetGurnal = "Добавление записи в исходящие " & DateString & " " & TimeString : ZapGurnal()
         Catch ex As Exception
@@ -108,7 +108,7 @@ Public Class Form1
     End Sub
 
     Sub Удалить()
-        Dim МВох As DialogResult = MessageBox.Show("Yдaлить текущую запись", "Уведомление", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
+        Dim МВох As DialogResult = MessageBox.Show("Удалить текущую запись", "Уведомление", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
         Try
             If МВох = DialogResult.No Then Exit Sub
             If МВох = DialogResult.Yes Then
@@ -118,7 +118,7 @@ Public Class Form1
                 Connector.Close()
                 ListView1.SelectedItems.Item(0).Remove()
                 Form1_Load(Me, New EventArgs)
-                MessageBox.Show("Зanиcь была успешна удалена из БД", "Операция успешна завершина", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Запись была успешна удалена из БД", "Операция успешна завершина", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
             OtchetGurnal = "Удаление записи в исходящие " & DateString & " " & TimeString : ZapGurnal()
         Catch ex As Exception
@@ -143,7 +143,7 @@ Public Class Form1
             Dim W = New Word.Application
             W.Visible = True
             W.Documents.Add()
-            W.Selection.TypeText("Bыnиcкa из БД: " & Дата & Chr(13) & Chr(10))
+            W.Selection.TypeText("Выписка из БД: " & Дата & Chr(13) & Chr(10))
             For i As Short = 0 To ListView1.Items.Count - 1
                 W.Selection.TypeText(ListView1.Items(i).SubItems.Item(0).Text & " " & ListView1.Items(i).SubItems.Item(1).Text & " " & ListView1.Items(i).SubItems.Item(2).Text & " " & ListView1.Items(i).SubItems.Item(3).Text & " " & ListView1.Items(i).SubItems.Item(4).Text & "" & ListView1.Items(i).SubItems.Item(5).Text & "" & ListView1.Items(i).SubItems.Item(6).Text & " " & ListView1.Items(i).SubItems.Item(7).Text & " " & ListView1.Items(i).SubItems.Item(8).Text & Chr(13) & Chr(10))
             Next i
@@ -330,7 +330,7 @@ Public Class Form1
             Connector.Close()
             ListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize)
             For Each columnheader In Me.ListView1.Columns
-                columnheader.Width = -3
+                columnheader.Width = -2
             Next
             OtchetGurnal = "Включениа фильтрация по номеру исходящие " & DateString & " " & TimeString : ZapGurnal()
         Catch ex As Exception

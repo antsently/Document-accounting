@@ -354,6 +354,9 @@
     <EmbeddedResource Include="Intro.resx">
       <DependentUpon>Intro.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Kontrol.resx">
+      <DependentUpon>Kontrol.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Licenses.resx">
       <DependentUpon>Licenses.vb</DependentUpon>
     </EmbeddedResource>

@@ -3,7 +3,7 @@ Imports Microsoft.Office.Interop
 
 Public Class Form13
     Private Sub ОбновитьToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ОбновитьToolStripMenuItem1.Click
-        OtchetGurnal = "Обновление Доклыдные и служебные записки " & DateString & " " & TimeString : ZapGurnal()
+        OtchetGurnal = "Обновление Докладные и служебные записки " & DateString & " " & TimeString : ZapGurnal()
         Form13_Load(Me, New EventArgs)
     End Sub
 
@@ -49,7 +49,7 @@ Public Class Form13
             Connector.Close()
             ListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize)
             For Each columnheader In Me.ListView1.Columns
-                columnheader.Width = -3
+                columnheader.Width = -2
             Next
             OtchetGurnal = "Включить фильтр по номеру Докладные и служебные записки" & DateString & " " & TimeString : ZapGurnal()
         Catch ex As Exception
@@ -93,7 +93,7 @@ Public Class Form13
             Connector.Close()
             ListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize)
             For Each columnheader In Me.ListView1.Columns
-                columnheader.Width = -3
+                columnheader.Width = -2
             Next
             OtchetGurnal = "Включен фильтр по дате Докладные и служебные записки" & DateString & " " & TimeString : ZapGurnal()
         Catch ex As Exception
@@ -167,12 +167,12 @@ Public Class Form13
     End Sub
 
     Private Sub ВыходToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ВыходToolStripMenuItem.Click
-        OtchetGurnal = "Закрытие Доклыдные и служебные записки " & DateString & " " & TimeString : ZapGurnal()
+        OtchetGurnal = "Закрытие Докладные и служебные записки " & DateString & " " & TimeString : ZapGurnal()
         Close()
     End Sub
 
     Private Sub ОбновитьToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ОбновитьToolStripMenuItem.Click
-        OtchetGurnal = "Обновление Доклыдные и служебные записки " & DateString & " " & TimeString : ZapGurnal()
+        OtchetGurnal = "Обновление Докладные и служебные записки " & DateString & " " & TimeString : ZapGurnal()
         Form13_Load(Me, New EventArgs)
     End Sub
 
@@ -273,9 +273,8 @@ Public Class Form13
         ListView1.Columns.Add("Peгиcтpaциoнный номер")
         ListView1.Columns.Add("Дaтa регистрации")
         ListView1.Columns.Add("Kpaткoe содержание")
-        ListView1.Columns.Add("Koличecтвo листов")
         ListView1.Columns.Add("Иcпoлнитeль")
-        ListView1.Columns.Add("Kyдa передан приказ")
+        ListView1.Columns.Add("Кому передан документ на исполнение")
         ListView1.Columns.Add("Oтмeткa о помещении в дело")
         ListView1.Items.Clear()
         Try
@@ -297,14 +296,13 @@ Public Class Form13
                 ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add(DataReader.GetValue(3))
                 ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add(DataReader.GetValue(4))
                 ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add(DataReader.GetValue(5))
-                ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add(DataReader.GetValue(6))
                 CountForm7 = ListView1.Items.Count
             End While
             DataReader.Close()
             Connector.Close()
             ListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize)
             For Each columnheader In Me.ListView1.Columns
-                columnheader.Width = -3
+                columnheader.Width = -2
             Next
             OtchetGurnal = "Загрузка успешна завершена Докладные и служебные записки" & DateString & "" & TimeString : ZapGurnal()
         Catch ex As Exception
@@ -318,22 +316,21 @@ Public Class Form13
         lvwColumnSorter = New ListViewColumnSorter()
         Me.ListView1.ListViewItemSorter = lvwColumnSorter
         Try
-            Dim Command As New OleDbCommand("Insert Into [Докладные и служебные записки] ([Регистрационный номер], [Дата регистрации], [Краткое содержание], [Количество листов], [Исполнитель], [Куда передан приказ], [Отметка о помещении в дело]) values ( '" & p1 & "', '" & p2 & "', '" & p3 & "', '" & p4 & "','" & p5 & "', '" & p6 & "', '" & p7 & "')", Connector)
+            Dim Command As New OleDbCommand("Insert Into [Докладные и служебные записки] ([Регистрационный номер], [Дата регистрации], [Краткое содержание], [Исполнитель], [Кому передан документ на исполнение], [Отметка о помещении в дело]) values ( '" & p1 & "', '" & p2 & "', '" & p3 & "', '" & p4 & "','" & p5 & "', '" & p6 & "')", Connector)
             Connector.Open()
             Command.ExecuteNonQuery()
             Connector.Close()
             ListView1.Items.Add("[Peгиcтpaциoнный номер]")
             ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Дaтa регистрации]")
             ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Kpaткoe содержание]")
-            ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Koличecтвo листов]")
-            ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Исnолнитель]")
-            ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Kyдa передан приказ]")
+            ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Исполнитель]")
+            ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Кому передан документ на исполнение]")
             ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Oтмeткa о помещении в дело]")
             OtchetGurnal = "Добавление записи в Докладные и служебные записки" & DateString & "" & TimeString : ZapGurnal()
             Form13_Load(Me, New EventArgs)
-            OtchetGurnal = "Добавление успешно Доклыдные и служебные записки " & DateString & " " & TimeString : ZapGurnal()
+            OtchetGurnal = "Добавление успешно Докладные и служебные записки " & DateString & " " & TimeString : ZapGurnal()
             For Each columnheader In Me.ListView1.Columns
-                columnheader.Width = -3
+                columnheader.Width = -2
             Next
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -343,7 +340,7 @@ Public Class Form13
 
     Sub Editor_zap()
         Try
-            Dim Command As New OleDbCommand("UPDATE [Докладные и служебные записки] SET [Регистрационный номер]='" & p1 & "', [Дата регистрации]='" & p2 & "', [Краткое содержание]='" & p3 & "', [Количество листов]='" & p4 & "', [Исполнитель]='" & p5 & "', [Куда передан приказ]='" & p6 & "', [Отметка о помещении в дело]='" & p7 & "' WHERE ([Регистрационный номер] Like '" & ListView1.SelectedItems.Item(0).Text & "')", Connector)
+            Dim Command As New OleDbCommand("UPDATE [Докладные и служебные записки] SET [Регистрационный номер]='" & p1 & "', [Дата регистрации]='" & p2 & "', [Краткое содержание]='" & p3 & "', [Исполнитель]='" & p4 & "', [Кому передан документ на исполнение]='" & p5 & "', [Отметка о помещении в дело]='" & p6 & "' WHERE ([Регистрационный номер] Like '" & ListView1.SelectedItems.Item(0).Text & "')", Connector)
             Connector.Open()
             Command.ExecuteNonQuery()
             Connector.Close()
@@ -355,7 +352,7 @@ Public Class Form13
             ListView1.SelectedItems.Item(0).SubItems.Item(5).Text = p6
             ListView1.SelectedItems.Item(0).SubItems.Item(6).Text = p7
             Form13_Load(Me, New EventArgs)
-            OtchetGurnal = "Редактирование успешно Доклыдные и служебные записки " & DateString & " " & TimeString : ZapGurnal()
+            OtchetGurnal = "Редактирование успешно Докладные и служебные записки " & DateString & " " & TimeString : ZapGurnal()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
             OtchetGurnal = "Ошибка" & ex.Message & DateString & " " & TimeString : ZapGurnal()
@@ -363,22 +360,21 @@ Public Class Form13
     End Sub
 
     Sub Удалить()
-        Dim МВох As DialogResult = MessageBox.Show("Yдaлить текущую запись", "Уведомление", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
+        Dim МВох As DialogResult = MessageBox.Show("Удaлить текущую запись", "Уведомление", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
         Try
             If МВох = DialogResult.No Then Exit Sub
             If МВох = DialogResult.Yes Then
-                Dim Command As New OleDbCommand("DELETE FROM [Докладные и служебные записки] WHERE [Регистрационный номер] '" & ListView1.SelectedItems.Item(0).Text & "'", Connector)
+                Dim Command As New OleDbCommand("DELETE FROM [Докладные и служебные записки] WHERE [Регистрационный номер]='" & ListView1.SelectedItems.Item(0).Text & "'", Connector)
                 Connector.Open()
                 Command.ExecuteNonQuery()
                 Connector.Close()
                 ListView1.SelectedItems.Item(0).Remove()
                 Form13_Load(Me, New EventArgs)
-                MessageBox.Show("Зaпиcь была успешна удалена из БД", "Операция успешна завершина", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                OtchetGurnal = "Удалена запись в Докладные и служебные записки" & DateString & " " & TimeString : ZapGurnal()
+                MessageBox.Show("Запись была успешна удалена из БД", "Операция успешна завершина", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)
-            OtchetGurnal = "Ошибка" & ex.Message & DateString & " " & TimeString : ZapGurnal()
         End Try
     End Sub
+
 End Class

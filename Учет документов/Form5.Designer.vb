@@ -30,6 +30,7 @@ Partial Class Form5
         Me.ФильтрToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.УбратьКолонкуToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ПоискПоНомеруToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ПоискПоДатеToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ВыключитьФильтрToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ЭкспортWordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ЭкспортExcelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -47,7 +48,6 @@ Partial Class Form5
         Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
         Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
         Me.ListView1 = New System.Windows.Forms.ListView()
-        Me.ПоискПоДатеToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.ContextMenuStrip2.SuspendLayout()
@@ -58,9 +58,9 @@ Partial Class Form5
         '
         Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.None
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.МенюИсходящихToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(9, 9)
+        Me.MenuStrip1.Location = New System.Drawing.Point(9, 1)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(128, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(212, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -68,8 +68,8 @@ Partial Class Form5
         '
         Me.МенюИсходящихToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ОбновитьToolStripMenuItem, Me.ФильтрToolStripMenuItem, Me.ЭкспортWordToolStripMenuItem, Me.ЭкспортExcelToolStripMenuItem, Me.ToolStripMenuItem1, Me.ВыходToolStripMenuItem})
         Me.МенюИсходящихToolStripMenuItem.Name = "МенюИсходящихToolStripMenuItem"
-        Me.МенюИсходящихToolStripMenuItem.Size = New System.Drawing.Size(120, 20)
-        Me.МенюИсходящихToolStripMenuItem.Text = "Меню Исходящих"
+        Me.МенюИсходящихToolStripMenuItem.Size = New System.Drawing.Size(112, 20)
+        Me.МенюИсходящихToolStripMenuItem.Text = "Меню Договоры"
         '
         'ОбновитьToolStripMenuItem
         '
@@ -100,6 +100,12 @@ Partial Class Form5
         Me.ПоискПоНомеруToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.F), System.Windows.Forms.Keys)
         Me.ПоискПоНомеруToolStripMenuItem.Size = New System.Drawing.Size(211, 22)
         Me.ПоискПоНомеруToolStripMenuItem.Text = "Поиск по номеру"
+        '
+        'ПоискПоДатеToolStripMenuItem
+        '
+        Me.ПоискПоДатеToolStripMenuItem.Name = "ПоискПоДатеToolStripMenuItem"
+        Me.ПоискПоДатеToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ПоискПоДатеToolStripMenuItem.Text = "Поиск по дате"
         '
         'ВыключитьФильтрToolStripMenuItem
         '
@@ -231,12 +237,6 @@ Partial Class Form5
         Me.ListView1.TabIndex = 4
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
-        '
-        'ПоискПоДатеToolStripMenuItem
-        '
-        Me.ПоискПоДатеToolStripMenuItem.Name = "ПоискПоДатеToolStripMenuItem"
-        Me.ПоискПоДатеToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.ПоискПоДатеToolStripMenuItem.Text = "Поиск по дате"
         '
         'Form5
         '

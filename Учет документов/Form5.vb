@@ -7,25 +7,23 @@ Public Class Form5
         lvwColumnSorter = New ListViewColumnSorter()
         Me.ListView1.ListViewItemSorter = lvwColumnSorter
         Try
-            Dim Command As New OleDbCommand("Insert Into [Договоры] ([№ n/n], [№ и дата договора], 
-[Поставщик, исполнитель, подрядчик], [Предмет договора], [Сумма договора], [Срок исполнения обязательств], [Количество листов], [Наличие приложений], [Инициатор (ответственный)], 
-[Примечание]) values ('" & p1 & "', '" & p2 & "', '" & p3 & "', '" & p4 & "', '" & p5 & "', '" & p6 & "','" & p7 & "', '" & p8 & "', '" & p9 & "', '" & p10 & "')", Connector)
+            Dim Command As New OleDbCommand("Insert Into [Договоры] ([№ п/п], [№ и дата договора], [Поставщик, исполнитель, подрядчик], [Предмет договора], [Сумма договора], [Срок исполнителя обязательства], [Количество листов], [Наличие приложений], [Инициатор (ответственный)], [Примечание]) values ('" & p1 & "', '" & p2 & "', '" & p3 & "', '" & p4 & "', '" & p5 & "', '" & p6 & "','" & p7 & "', '" & p8 & "', '" & p9 & "', '" & p10 & "')", Connector)
             Connector.Open()
             Command.ExecuteNonQuery()
             Connector.Close()
-            ListView1.Items.Add("[№ n/n]")
+            ListView1.Items.Add("[№ п/п]")
             ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[№ и дата договора]")
             ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Поставщик, исполнитель, подрядчик]")
             ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Пpeдмeт договора]")
             ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Cyммa договора]")
-            ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Cpoк исполнения обязательств]")
+            ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Срок исполнителя обязательстваа]")
             ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Koличecтвo листов]")
             ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Haличиe приложений]")
             ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Инициатор (ответственный)]")
             ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("Примечание")
             Form5_Load(Me, New EventArgs)
             For Each columnheader In Me.ListView1.Columns
-                columnheader.Width = -3
+                columnheader.Width = -2
             Next
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -34,7 +32,7 @@ Public Class Form5
 
     Sub Editor_zap()
         Try
-            Dim Command As New OleDbCommand("UPDATE [Договоры] SET [№ n/n]='" & p1 & "', [№ и дата договора]='" & p2 & "', [Поставщик, исполнитель, подрядчик]='" & p3 & "', [Предмет договора]='" & p4 & "', [Сумма договора]='" & p5 & "', [Срок исполнения обязательств]='" & p6 & "', [Количество листов]='" & p7 & "', [Наличие приложений]='" & p8 & "', [Инициатор(ответственный)]='" & p9 & "', [Примечание]='" & p10 & "' WHERE ( [№ п/п] Like '" & ListView1.SelectedItems.Item(0).Text & "')", Connector)
+            Dim Command As New OleDbCommand("UPDATE [Договоры] SET [№ п/п]='" & p1 & "', [№ и дата договора]='" & p2 & "', [Поставщик, исполнитель, подрядчик]='" & p3 & "', [Предмет договора]='" & p4 & "', [Сумма договора]='" & p5 & "', [Срок исполнителя обязательстваа]='" & p6 & "', [Количество листов]='" & p7 & "', [Наличие приложений]='" & p8 & "', [Инициатор(ответственный)]='" & p9 & "', [Примечание]='" & p10 & "' WHERE ( [№ п/п] Like '" & ListView1.SelectedItems.Item(0).Text & "')", Connector)
             Connector.Open()
             Command.ExecuteNonQuery()
             Connector.Close()
@@ -54,24 +52,24 @@ Public Class Form5
         End Try
     End Sub
 
-
     Sub Удалить()
-        Dim МВох As DialogResult = MessageBox.Show("Yдaлить текущую запись", "Уведомление", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
+        Dim МВох As DialogResult = MessageBox.Show("Удaлить текущую запись", "Уведомление", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
         Try
             If МВох = DialogResult.No Then Exit Sub
             If МВох = DialogResult.Yes Then
-                Dim Command As New OleDbCommand("DELETE FROM [Договоры] WHERE [№ п/п] '" & ListView1.SelectedItems.Item(0).Text & "'", Connector)
+                Dim Command As New OleDbCommand("DELETE FROM [Договоры] WHERE [№ п/п]='" & ListView1.SelectedItems.Item(0).Text & "'", Connector)
                 Connector.Open()
                 Command.ExecuteNonQuery()
                 Connector.Close()
                 ListView1.SelectedItems.Item(0).Remove()
                 Form5_Load(Me, New EventArgs)
-                MessageBox.Show("Зanиcь была успешна удалена из БД", "Операция успешна завершина", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Запись была успешна удалена из БД", "Операция успешна завершина", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
     End Sub
+
     Private Sub Form5_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.MdiParent = MDIParent1
         Prava()
@@ -83,7 +81,7 @@ Public Class Form5
         ListView1.Columns.Add("Пocтaвщик, исполнитель, подрядчик")
         ListView1.Columns.Add("Пpeдмeт договора")
         ListView1.Columns.Add("Cyммa договора")
-        ListView1.Columns.Add("Cpoк исполнения обязательств")
+        ListView1.Columns.Add("Срок исполнителя обязательства")
         ListView1.Columns.Add("Koличecтвo листов")
         ListView1.Columns.Add("Haличиe приложений")
         ListView1.Columns.Add("Инициaтop (ответственный)")
@@ -118,7 +116,7 @@ Public Class Form5
             Connector.Close()
             ListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize)
             For Each columnheader In Me.ListView1.Columns
-                columnheader.Width = -3
+                columnheader.Width = -2
             Next
         Catch ex As Exception
             Connector.Close()
@@ -215,19 +213,19 @@ Public Class Form5
             lvwColumnSorter = New ListViewColumnSorter()
             Me.ListView1.ListViewItemSorter = lvwColumnSorter
             ListView1.Columns.Clear()
-            ListView1.Columns.Add("№ n/n")
+            ListView1.Columns.Add("№ п/п")
             ListView1.Columns.Add("№ и дата договора")
             ListView1.Columns.Add("Пocтaвщик, исполнитель, подрядчик")
             ListView1.Columns.Add("Пpeдмeт договора")
             ListView1.Columns.Add("Cyммa договора")
-            ListView1.Columns.Add("Cpoк исполнения обязательств")
+            ListView1.Columns.Add("Срок исполнителя обязательства")
             ListView1.Columns.Add("Koличecтвo листов")
             ListView1.Columns.Add("Haличиe приложений")
             ListView1.Columns.Add("Инициaтop (ответственный)")
             ListView1.Columns.Add("Пpимeчaниe")
             ListView1.Items.Clear()
             Dim DataReader As OleDbDataReader
-            Dim Command As New OleDbCommand("SELECT * FROM Договоры WHERE ((([№ n/n]) Like '%" & Nomer & "%'));", Connector)
+            Dim Command As New OleDbCommand("SELECT * FROM Договоры WHERE ((([№ п/п]) Like '%" & Nomer & "%'));", Connector)
             Connector.Open()
             DataReader = Command.ExecuteReader
             While DataReader.Read() = True
@@ -246,7 +244,7 @@ Public Class Form5
             Connector.Close()
             ListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize)
             For Each columnheader In Me.ListView1.Columns
-                columnheader.Width = -3
+                columnheader.Width = -2
             Next
         Catch ex As Exception
             MessageBox.Show("Cлeдyeт вводить только числа", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -259,7 +257,7 @@ Public Class Form5
             Dim W = New Word.Application
             W.VisiЫe = True
             W.Documents.Add()
-            W.Selection.TypeText("Bыnиcкa из БД: " & Дата & Chr(13) & Chr(10))
+            W.Selection.TypeText("Выписка из БД: " & Дата & Chr(13) & Chr(10))
             For i As Short = 0 To ListView1.Items.Count - 1
                 W.Selection.TypeText(ListView1.Items(i).SubItems.Item(0).Text & " " & ListView1.Items(i).SubItems.Item(1).Text & " " & ListView1.Items(i).SubItems.Item(2).Text & " " & ListView1.Items(i).SubItems.Item(3).Text & " " & ListView1.Items(i).SubItems.Item(4).Text & "" & ListView1.Items(i).SubItems.Item(5).Text & "" & ListView1.Items(i).SubItems.Item(6).Text & " " & ListView1.Items(i).SubItems.Item(7).Text & " " & ListView1.Items(i).SubItems.Item(8).Text & Chr(13) & Chr(10))
             Next i
@@ -323,12 +321,12 @@ Public Class Form5
             lvwColumnSorter = New ListViewColumnSorter()
             Me.ListView1.ListViewItemSorter = lvwColumnSorter
             ListView1.Columns.Clear()
-            ListView1.Columns.Add("№ n/n")
+            ListView1.Columns.Add("№ п/п")
             ListView1.Columns.Add("№ и дата договора")
             ListView1.Columns.Add("Пocтaвщик, исполнитель, подрядчик")
             ListView1.Columns.Add("Пpeдмeт договора")
             ListView1.Columns.Add("Cyммa договора)")
-            ListView1.Columns.Add("Cpoк исполнения обязательств")
+            ListView1.Columns.Add("Срок исполнителя обязательства")
             ListView1.Columns.Add("Koличecтвo листов")
             ListView1.Columns.Add("Haличиe приложений")
             ListView1.Columns.Add("Инициaтop (ответственный)")
@@ -354,7 +352,7 @@ Public Class Form5
             Connector.Close()
             ListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize)
             For Each columnheader In Me.ListView1.Columns
-                columnheader.Width = -3
+                columnheader.Width = -2
             Next
         Catch ех As Exception
             MessageBox.Show("Cлeдyeт вводить только числа", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error)

@@ -19,7 +19,6 @@ Public Class Master
         ListBox2.Items.Clear()
         ListView1.Columns.Clear()
         ListView1.Items.Clear()
-        Close()
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged

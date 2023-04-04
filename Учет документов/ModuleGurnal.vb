@@ -28,7 +28,7 @@ Module ModuleGurnal
                 ZapIP()
             End If
             If SettingsGurnal = "Да" Then
-                Dim Command As New OleDbCommand("Insert Into [Журнал] ([Запись]) values ( '" & OtchetGurnal & "')", Connector)
+                Dim Command As New OleDbCommand("INSERT INTO [Журнал] ([Запись]) VALUES ('" & OtchetGurnal & "')", Connector)
                 Connector.Open()
                 Command.ExecuteNonQuery()
                 Connector.Close()

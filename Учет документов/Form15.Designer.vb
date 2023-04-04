@@ -209,8 +209,8 @@ Partial Class Form15
         '
         Me.МенюИсходящихToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ОбновитьToolStripMenuItem1, Me.ФильтрToolStripMenuItem, Me.ЭкспортWordToolStripMenuItem, Me.ЭкспортExcelToolStripMenuItem, Me.ToolStripMenuItem1, Me.ВыходToolStripMenuItem})
         Me.МенюИсходящихToolStripMenuItem.Name = "МенюИсходящихToolStripMenuItem"
-        Me.МенюИсходящихToolStripMenuItem.Size = New System.Drawing.Size(118, 20)
-        Me.МенюИсходящихToolStripMenuItem.Text = "Меню исходящих"
+        Me.МенюИсходящихToolStripMenuItem.Size = New System.Drawing.Size(84, 20)
+        Me.МенюИсходящихToolStripMenuItem.Text = "Меню Акты"
         '
         'MenuStrip1
         '
@@ -218,7 +218,7 @@ Partial Class Form15
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.МенюИсходящихToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(9, 1)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(126, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(92, 24)
         Me.MenuStrip1.TabIndex = 9
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -228,9 +228,9 @@ Partial Class Form15
         Me.ListView1.FullRowSelect = True
         Me.ListView1.GridLines = True
         Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(0, 0)
+        Me.ListView1.Location = New System.Drawing.Point(0, 25)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(870, 467)
+        Me.ListView1.Size = New System.Drawing.Size(870, 442)
         Me.ListView1.Sorting = System.Windows.Forms.SortOrder.Ascending
         Me.ListView1.TabIndex = 11
         Me.ListView1.UseCompatibleStateImageBehavior = False
@@ -241,9 +241,9 @@ Partial Class Form15
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(870, 467)
+        Me.Controls.Add(Me.ListView1)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.Controls.Add(Me.ListView1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form15"
         Me.Text = "Акты"

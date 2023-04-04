@@ -19,7 +19,7 @@ Public Class Form9
             ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Oтмeткa о помещении в дело]")
             Form9_Load(Me, New EventArgs)
             For Each columnheader In Me.ListView1.Columns
-                columnheader.Width = -3
+                columnheader.Width = -2
             Next
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -45,22 +45,23 @@ Public Class Form9
     End Sub
 
     Sub Удалить()
-        Dim МВох As DialogResult = MessageBox.Show("Yдaлить текущую запись", "Уведомление", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
+        Dim МВох As DialogResult = MessageBox.Show("Удaлить текущую запись", "Уведомление", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
         Try
             If МВох = DialogResult.No Then Exit Sub
             If МВох = DialogResult.Yes Then
-                Dim Command As New OleDbCommand("DELETE FROM [Приказы по студентам] WHERE [Регистрационный номер] '" & ListView1.SelectedItems.Item(0).Text & "'", Connector)
+                Dim Command As New OleDbCommand("DELETE FROM [Приказы по студентам] WHERE [Регистрационный номер]='" & ListView1.SelectedItems.Item(0).Text & "'", Connector)
                 Connector.Open()
                 Command.ExecuteNonQuery()
                 Connector.Close()
                 ListView1.SelectedItems.Item(0).Remove()
                 Form9_Load(Me, New EventArgs)
-                MessageBox.Show("Зanиcь была успешна удалена из БД", "Операция успешна завершина", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Запись была успешна удалена из БД", "Операция успешна завершина", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
     End Sub
+
     Private Sub Form9_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.MdiParent = MDIParent1
         Prava()
@@ -100,7 +101,7 @@ Public Class Form9
             Connector.Close()
             ListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize)
             For Each columnheader In Me.ListView1.Columns
-                columnheader.Width = -3
+                columnheader.Width = -2
             Next
         Catch ex As Exception
             Connector.Close()
@@ -159,7 +160,7 @@ Public Class Form9
             Connector.Close()
             ListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize)
             For Each columnheader In Me.ListView1.Columns
-                columnheader.Width = -3
+                columnheader.Width = -2
             Next
         Catch ex As Exception
             MessageBox.Show("Cлeдyeт вводить только числа", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -176,7 +177,7 @@ Public Class Form9
             Dim W = New Word.Application
             W.VisiЫe = True
             W.Documents.Add()
-            W.Selection.TypeText("Bыnиcкa из БД: " & Дата & Chr(13) & Chr(10))
+            W.Selection.TypeText("Выписка из БД: " & Дата & Chr(13) & Chr(10))
             For i As Short = 0 To ListView1.Items.Count - 1
                 W.Selection.TypeText(ListView1.Items(i).SubItems.Item(0).Text & " " & ListView1.Items(i).SubItems.Item(1).Text & " " & ListView1.Items(i).SubItems.Item(2).Text & " " & ListView1.Items(i).SubItems.Item(3).Text & " " & ListView1.Items(i).SubItems.Item(4).Text & "" & ListView1.Items(i).SubItems.Item(5).Text & "" & ListView1.Items(i).SubItems.Item(6).Text & " " & ListView1.Items(i).SubItems.Item(7).Text & " " & ListView1.Items(i).SubItems.Item(8).Text & Chr(13) & Chr(10))
             Next i
@@ -363,7 +364,7 @@ Public Class Form9
             Connector.Close()
             ListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize)
             For Each columnheader In Me.ListView1.Columns
-                columnheader.Width = -3
+                columnheader.Width = -2
             Next
         Catch ех As Exception
             MessageBox.Show("Cлeдyeт вводить только числа", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error)

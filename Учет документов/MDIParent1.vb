@@ -8,7 +8,6 @@ Public Class MDIParent1
         Dim Command1 As New OleDbCommand("SELECT * FROM Параметры", Connector)
         Connector.Open()
         DataReader1 = Command1.ExecuteReader
-
         While DataReader1.Read() = True
             SettingsGurnal = DataReader1.GetValue(0)
             SettingsOprPolzovatelya = DataReader1.GetValue(1)
@@ -49,15 +48,8 @@ Public Class MDIParent1
     End Sub
 
     Private Sub СтрокаСостоянияToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles СтрокаСостоянияToolStripMenuItem.Click
-
+        Me.StatusStrip1.Visible = Not Me.StatusStrip1.Visible
     End Sub
-    Private Sub StatusStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles StatusStrip1.ItemClicked
-        'Me.StatusStrip1.Visible = Me.StatusBarToolStripMenuItem.Checked
-    End Sub
-
-    'Private Sub StatusStrip1_Validating(sender As Object, e As CancelEventArgs) Handles StatusStrip1.Validating
-    '    Me.StatusStrip1.Visible = Me.StatusBarToolStripMenuItem.Checked
-    'End Sub
 
     Private Sub ИсходящиеToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ИсходящиеToolStripMenuItem.Click
         Form1.Close()
@@ -150,7 +142,7 @@ Public Class MDIParent1
     Private Sub ЖурналСобытийToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ЖурналСобытийToolStripMenuItem.Click
         Gurnal.Close()
         Gurnal.Show()
-        OtchetGurnal = "Открыт журнал " & DateString & " " & TimeString : ZapGurnal() : ZapGurnal()
+        OtchetGurnal = "Открыт журнал " & DateString & " " & TimeString : ZapGurnal()
     End Sub
 
     Private Sub АвторизоватьсяToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles АвторизоватьсяToolStripMenuItem.Click
@@ -174,7 +166,7 @@ Public Class MDIParent1
                 End While
                 If PravaPolzovatelyaKod = "" Then MessageBox.Show("Авторизация не удалась", "Не удача", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 If PravaPolzovatelyaKod <> "" Then
-                    MessageBox.Show("Дoбpo пожаловать в программу: " & PravaPolzovatelyaFamiliya & " " & PravaPolzovatelyaImya & " " & PravaPolzovatelyaOtchestvo, "Авторизация", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show("Дoбpo пожаловать в программу " & PravaPolzovatelyaFamiliya & " " & PravaPolzovatelyaImya & " " & PravaPolzovatelyaOtchestvo, "Авторизация", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     ToolStripStatusLabel5.Text = "Авторизован: " & PravaPolzovatelyaFamiliya & " " & PravaPolzovatelyaImya & " " & PravaPolzovatelyaOtchestvo
                 End If
                 DataReader.Close()
@@ -311,6 +303,10 @@ Public Class MDIParent1
     End Sub
 
     Private Sub ЛицензионноеСоглашениеToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ЛицензионноеСоглашениеToolStripMenuItem.Click
-        Licenses.Show()
+        Try
+            Licenses.Show()
+        Catch ex As Exception
+            OtchetGurnal = "Запущена форма Лицензионное соглашение " & ex.Message & DateString & " " & TimeString : ZapGurnal()
+        End Try
     End Sub
 End Class

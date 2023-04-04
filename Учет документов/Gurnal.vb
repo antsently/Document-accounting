@@ -2,13 +2,14 @@
 Imports Microsoft.Office.Interop
 
 Public Class Gurnal
+
     Private Sub Gurnal_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.MdiParent = MDIParent1
         Prava()
         lvwColumnSorter = New ListViewColumnSorter()
         Me.ListView1.ListViewItemSorter = lvwColumnSorter
         ListView1.Columns.Clear()
-        ListView1.Columns.Add("№ П/П")
+        ListView1.Columns.Add("№ п/п")
         ListView1.Columns.Add("Запись")
         ListView1.Items.Clear()
         Try
@@ -16,7 +17,7 @@ Public Class Gurnal
             If ToolStripTextBox1.Text = "" Then
                 Poisk = "SELECT * FROM Журнал"
             Else
-                Poisk = "SELECT * FROM Журнал where ((Журнал. [Запись]) Like '%" & ToolStripTextBox1.Text & "%')"
+                Poisk = "SELECT * FROM Журнал WHERE ((Журнал.[Запись]) Like '%" & ToolStripTextBox1.Text & "%')"
             End If
             Dim DataReader As OleDbDataReader
             Dim Command As New OleDbCommand(Poisk, Connector)
@@ -38,7 +39,15 @@ Public Class Gurnal
         End Try
     End Sub
 
-    Private Sub ListView1_ColumnClick(sender As Object, e As ColumnClickEventArgs) Handles ListView1.ColumnClick
+    Private Sub ToolStripButton3_Click(sender As Object, e As EventArgs) Handles ToolStripButton3.Click
+        Gurnal_Load(Me, New EventArgs)
+    End Sub
+
+    Private Sub ОбновитьToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ОбновитьToolStripMenuItem.Click
+        Gurnal_Load(Me, New EventArgs)
+    End Sub
+
+    Private Sub ListView1_ColumnClick(sender As Object, e As ColumnClickEventArgs)
         If (e.Column = lvwColumnSorter.SortColumn) Then
             If (lvwColumnSorter.Order = SortOrder.Ascending) Then
                 lvwColumnSorter.Order = SortOrder.Descending
@@ -55,7 +64,7 @@ Public Class Gurnal
 
     Private Sub ЭкспортWordToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ЭкспортWordToolStripMenuItem.Click
         Try
-            Dim Дата As String = Format(Now, "d MMMM уууу")
+            Dim Дата As String = Format(Now, "d MMMM yyyy")
             Dim W = New Word.Application
             W.Visible = True
             W.Documents.Add()
@@ -99,15 +108,11 @@ Public Class Gurnal
     End Sub
 
     Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
-        ЭкспортExcelToolStripMenuItem_Click(Me, New EventArgs)
-    End Sub
-
-    Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
         ЭкспортWordToolStripMenuItem_Click(Me, New EventArgs)
     End Sub
 
-    Private Sub ToolStripButton3_Click(sender As Object, e As EventArgs) Handles ToolStripButton3.Click
-        Gurnal_Load(Me, New EventArgs)
+    Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
+        ЭкспортExcelToolStripMenuItem_Click(Me, New EventArgs)
     End Sub
 
     Private Sub ToolStripButton4_Click(sender As Object, e As EventArgs) Handles ToolStripButton4.Click
@@ -123,9 +128,5 @@ Public Class Gurnal
         If e.KeyCode = Keys.Enter Then
             Gurnal_Load(Me, New EventArgs)
         End If
-    End Sub
-
-    Private Sub ОбновитьToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ОбновитьToolStripMenuItem.Click
-        Gurnal_Load(Me, New EventArgs)
     End Sub
 End Class

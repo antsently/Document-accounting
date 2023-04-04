@@ -214,7 +214,7 @@ Partial Class Form6
         Me.TextBox16.Name = "TextBox16"
         Me.TextBox16.Size = New System.Drawing.Size(296, 20)
         Me.TextBox16.TabIndex = 19
-        Me.TextBox16.Text = "Срок исполнения обязательств"
+        Me.TextBox16.Text = "Срок исполнения обязательства" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'TextBox17
         '

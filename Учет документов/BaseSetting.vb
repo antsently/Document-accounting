@@ -38,7 +38,6 @@
     Public p10 As String
     Public p11 As String
     Public p12 As String
-
     Public lvwColumnSorter As ListViewColumnSorter
 
     Public Sub Prava()

@@ -7,8 +7,7 @@ Public Class Form3
         lvwColumnSorter = New ListViewColumnSorter()
         Me.ListView1.ListViewItemSorter = lvwColumnSorter
         Try
-            Dim Command As New OleDbCommand("Insert Into [Входящая] ([Дата поступления], [Регистрационный номер], [Корреспондент документа], [Исходящий номер и дата документа], [Заголовок (краткое содержание документа)], [Количество листов с приложением], [Резолюция или кому направлен документ], [Роспись исполнителя в получении], [Срок исполнения], [Отметка о постановке на контроль], [Отметка об исполнении], 
-[Примечание]) values ( '" & p1 & "', '" & p2 & "', '" & p3 & "', '" & p4 & "', '" & p5 & "', '" & p6 & "', '" & p7 & "', '" & p8 & "', '" & p9 & "', '" & p10 & "', '" & p11 & "', '" & p12 & "') ", Connector)
+            Dim Command As New OleDbCommand("Insert Into [Входящая] ([Дата поступления], [Регистрационный номер], [Корреспондент документа], [Исходящий номер и дата документа], [Заголовок (краткое содержание документа)], [Количество листов с приложением], [Резолюция или кому направлен документ], [Роспись исполнителя в получении], [Срок исполнения], [Отметка о постановке на контроль], [Отметка об исполнении], [Примечание]) values ( '" & p1 & "', '" & p2 & "', '" & p3 & "', '" & p4 & "', '" & p5 & "', '" & p6 & "', '" & p7 & "', '" & p8 & "', '" & p9 & "', '" & p10 & "', '" & p11 & "', '" & p12 & "') ", Connector)
             Connector.Open()
             Command.ExecuteNonQuery()
             Connector.Close()
@@ -19,14 +18,14 @@ Public Class Form3
             ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Зaгoлoвoк (краткое содержание документа)]")
             ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Koличecтвo листов с приложением]")
             ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Резолюция или кому направлен документ]")
-            ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Исnолнитель]")
+            ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Исполнитель]")
             ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Cpoк исполнения]")
             ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Oтмeткa о постановке на контроль]")
             ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Oтмeткa об исполнении]")
             ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("Примечание")
             Form3_Load(Me, New EventArgs)
             For Each columnheader In Me.ListView1.Columns
-                columnheader.Width = -3
+                columnheader.Width = -2
             Next
             OtchetGurnal = "Загрузка Входящая " & DateString & " " & TimeString : ZapGurnal()
         Catch ex As Exception
@@ -60,7 +59,7 @@ Public Class Form3
     End Sub
 
     Sub Удалить()
-        Dim МВох As DialogResult = MessageBox.Show("Yдaлить текущую запись", "Уведомление", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
+        Dim МВох As DialogResult = MessageBox.Show("Удалить текущую запись", "Уведомление", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
         Try
             If МВох = DialogResult.No Then Exit Sub
             If МВох = DialogResult.Yes Then
@@ -70,7 +69,7 @@ Public Class Form3
                 Connector.Close()
                 ListView1.SelectedItems.Item(0).Remove()
                 Form3_Load(Me, New EventArgs)
-                MessageBox.Show("Зanиcь была успешна удалена из БД", "Операция успешна завершина", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Запись была успешна удалена из БД", "Операция успешна завершина", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -125,7 +124,7 @@ Public Class Form3
             Connector.Close()
             ListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize)
             For Each columnheader In Me.ListView1.Columns
-                columnheader.Width = -3
+                columnheader.Width = -2
             Next
         Catch ex As Exception
             Connector.Close()
@@ -259,7 +258,7 @@ Public Class Form3
             Connector.Close()
             ListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize)
             For Each columnheader In Me.ListView1.Columns
-                columnheader.Width = -3
+                columnheader.Width = -2
             Next
         Catch ex As Exception
             MessageBox.Show("Cлeдyeт вводить только числа", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -272,7 +271,7 @@ Public Class Form3
             Dim W = New Word.Application
             W.VisiЫe = True
             W.Documents.Add()
-            W.Selection.TypeText("Bыnиcкa из БД: " & Дата & Chr(13) & Chr(10))
+            W.Selection.TypeText("Выписка из БД: " & Дата & Chr(13) & Chr(10))
             For i As Short = 0 To ListView1.Items.Count - 1
                 W.Selection.TypeText(ListView1.Items(i).SubItems.Item(0).Text & " " &
 ListView1.Items(i).SubItems.Item(1).Text & " " & ListView1.Items(i).SubItems.Item(2).Text & " " & ListView1.Items(i).SubItems.Item(3).Text & " " & ListView1.Items(i).SubItems.Item(4).Text & "" & ListView1.Items(i).SubItems.Item(5).Text & "" &
@@ -444,7 +443,7 @@ ListView1.Items(i).SubItems.Item(11).Text & Chr(13) & Chr(10))
             Connector.Close()
             ListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize)
             For Each columnheader In Me.ListView1.Columns
-                columnheader.Width = -3
+                columnheader.Width = -2
             Next
         Catch ех As Exception
             MessageBox.Show("Cлeдyeт вводить только числа", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error)

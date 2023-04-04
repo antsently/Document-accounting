@@ -43,16 +43,17 @@ Partial Class Settings2
         '
         'TextBox6
         '
-        Me.TextBox6.Enabled = False
         Me.TextBox6.Location = New System.Drawing.Point(281, 102)
         Me.TextBox6.Margin = New System.Windows.Forms.Padding(0)
         Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TextBox6.Size = New System.Drawing.Size(279, 20)
         Me.TextBox6.TabIndex = 109
         '
         'TextBox5
         '
         Me.TextBox5.FormattingEnabled = True
+        Me.TextBox5.Items.AddRange(New Object() {"Администратор", "Пользователь", "Гость"})
         Me.TextBox5.Location = New System.Drawing.Point(281, 82)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(300, 21)

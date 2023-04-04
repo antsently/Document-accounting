@@ -73,7 +73,7 @@ Partial Class Settings
         '
         Me.TabPage4.Location = New System.Drawing.Point(4, 22)
         Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Size = New System.Drawing.Size(576, 258)
+        Me.TabPage4.Size = New System.Drawing.Size(576, 263)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Обновления"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -83,7 +83,7 @@ Partial Class Settings
         Me.ComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Items.AddRange(New Object() {"Да ", "Нет"})
+        Me.ComboBox4.Items.AddRange(New Object() {"Да", "Нет"})
         Me.ComboBox4.Location = New System.Drawing.Point(6, 16)
         Me.ComboBox4.Name = "ComboBox4"
         Me.ComboBox4.Size = New System.Drawing.Size(162, 21)
@@ -136,7 +136,7 @@ Partial Class Settings
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripButton3, Me.ToolStripSeparator1, Me.ToolStripButton4})
         Me.ToolStrip1.Location = New System.Drawing.Point(6, 16)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(141, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(110, 25)
         Me.ToolStrip1.TabIndex = 0
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -148,6 +148,7 @@ Partial Class Settings
         Me.ToolStripButton1.Name = "ToolStripButton1"
         Me.ToolStripButton1.Size = New System.Drawing.Size(23, 22)
         Me.ToolStripButton1.Text = "ToolStripButton1"
+        Me.ToolStripButton1.ToolTipText = "Добавить"
         '
         'ToolStripButton2
         '
@@ -157,6 +158,7 @@ Partial Class Settings
         Me.ToolStripButton2.Name = "ToolStripButton2"
         Me.ToolStripButton2.Size = New System.Drawing.Size(23, 22)
         Me.ToolStripButton2.Text = "ToolStripButton2"
+        Me.ToolStripButton2.ToolTipText = "Редактировать"
         '
         'ToolStripButton3
         '
@@ -166,6 +168,7 @@ Partial Class Settings
         Me.ToolStripButton3.Name = "ToolStripButton3"
         Me.ToolStripButton3.Size = New System.Drawing.Size(23, 22)
         Me.ToolStripButton3.Text = "ToolStripButton3"
+        Me.ToolStripButton3.ToolTipText = "Обновить"
         '
         'ToolStripSeparator1
         '
@@ -180,6 +183,7 @@ Partial Class Settings
         Me.ToolStripButton4.Name = "ToolStripButton4"
         Me.ToolStripButton4.Size = New System.Drawing.Size(23, 22)
         Me.ToolStripButton4.Text = "ToolStripButton4"
+        Me.ToolStripButton4.ToolTipText = "Удалить"
         '
         'TabPage2
         '
@@ -193,7 +197,7 @@ Partial Class Settings
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(576, 258)
+        Me.TabPage2.Size = New System.Drawing.Size(576, 263)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Системные настройки"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -234,7 +238,7 @@ Partial Class Settings
         Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"Да ", "Нет"})
+        Me.ComboBox2.Items.AddRange(New Object() {"Да", "Нет"})
         Me.ComboBox2.Location = New System.Drawing.Point(3, 19)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(162, 21)
@@ -255,7 +259,7 @@ Partial Class Settings
         Me.ComboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox5.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ComboBox5.FormattingEnabled = True
-        Me.ComboBox5.Items.AddRange(New Object() {"Да ", "Нет"})
+        Me.ComboBox5.Items.AddRange(New Object() {"Да", "Нет"})
         Me.ComboBox5.Location = New System.Drawing.Point(6, 19)
         Me.ComboBox5.Name = "ComboBox5"
         Me.ComboBox5.Size = New System.Drawing.Size(162, 21)
@@ -276,7 +280,7 @@ Partial Class Settings
         Me.TextBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.TextBox5.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.TextBox5.FormattingEnabled = True
-        Me.TextBox5.Items.AddRange(New Object() {"Да ", "Нет"})
+        Me.TextBox5.Items.AddRange(New Object() {"Да", "Нет"})
         Me.TextBox5.Location = New System.Drawing.Point(6, 18)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(162, 21)
@@ -297,7 +301,7 @@ Partial Class Settings
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Да ", "Нет"})
+        Me.ComboBox1.Items.AddRange(New Object() {"Да", "Нет"})
         Me.ComboBox1.Location = New System.Drawing.Point(6, 19)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(162, 21)
@@ -318,7 +322,7 @@ Partial Class Settings
         Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Items.AddRange(New Object() {"Да ", "Нет"})
+        Me.ComboBox3.Items.AddRange(New Object() {"Да", "Нет"})
         Me.ComboBox3.Location = New System.Drawing.Point(6, 16)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(162, 21)
@@ -342,7 +346,7 @@ Partial Class Settings
         Me.TabPage3.Controls.Add(Me.GroupBox5)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(576, 258)
+        Me.TabPage3.Size = New System.Drawing.Size(576, 263)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "База данных"
         Me.TabPage3.UseVisualStyleBackColor = True

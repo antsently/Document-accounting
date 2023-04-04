@@ -60,7 +60,7 @@ Partial Class Form13
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.МенюИсходящихToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(9, 1)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(126, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(341, 24)
         Me.MenuStrip1.TabIndex = 4
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -68,21 +68,21 @@ Partial Class Form13
         '
         Me.МенюИсходящихToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ОбновитьToolStripMenuItem1, Me.ФильтрToolStripMenuItem, Me.ЭкспортWordToolStripMenuItem, Me.ЭкспортExcelToolStripMenuItem, Me.ToolStripMenuItem1, Me.ВыходToolStripMenuItem})
         Me.МенюИсходящихToolStripMenuItem.Name = "МенюИсходящихToolStripMenuItem"
-        Me.МенюИсходящихToolStripMenuItem.Size = New System.Drawing.Size(118, 20)
-        Me.МенюИсходящихToolStripMenuItem.Text = "Меню исходящих"
+        Me.МенюИсходящихToolStripMenuItem.Size = New System.Drawing.Size(241, 20)
+        Me.МенюИсходящихToolStripMenuItem.Text = "Меню Докладные и служебные записки"
         '
         'ОбновитьToolStripMenuItem1
         '
         Me.ОбновитьToolStripMenuItem1.Name = "ОбновитьToolStripMenuItem1"
         Me.ОбновитьToolStripMenuItem1.ShortcutKeys = System.Windows.Forms.Keys.F5
-        Me.ОбновитьToolStripMenuItem1.Size = New System.Drawing.Size(151, 22)
+        Me.ОбновитьToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.ОбновитьToolStripMenuItem1.Text = "Обновить"
         '
         'ФильтрToolStripMenuItem
         '
         Me.ФильтрToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.УбратьКолонкуToolStripMenuItem, Me.ПоискПоНомеруToolStripMenuItem, Me.ВыключитьФильтрToolStripMenuItem})
         Me.ФильтрToolStripMenuItem.Name = "ФильтрToolStripMenuItem"
-        Me.ФильтрToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
+        Me.ФильтрToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ФильтрToolStripMenuItem.Text = "Фильтр"
         '
         'УбратьКолонкуToolStripMenuItem
@@ -116,25 +116,25 @@ Partial Class Form13
         '
         Me.ЭкспортWordToolStripMenuItem.Image = Global.Учет_документов.My.Resources.Resources.Word
         Me.ЭкспортWordToolStripMenuItem.Name = "ЭкспортWordToolStripMenuItem"
-        Me.ЭкспортWordToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
+        Me.ЭкспортWordToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ЭкспортWordToolStripMenuItem.Text = "Экспорт Word"
         '
         'ЭкспортExcelToolStripMenuItem
         '
         Me.ЭкспортExcelToolStripMenuItem.Image = Global.Учет_документов.My.Resources.Resources.Excel
         Me.ЭкспортExcelToolStripMenuItem.Name = "ЭкспортExcelToolStripMenuItem"
-        Me.ЭкспортExcelToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
+        Me.ЭкспортExcelToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ЭкспортExcelToolStripMenuItem.Text = "Экспорт Excel"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(148, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(149, 6)
         '
         'ВыходToolStripMenuItem
         '
         Me.ВыходToolStripMenuItem.Name = "ВыходToolStripMenuItem"
-        Me.ВыходToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
+        Me.ВыходToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ВыходToolStripMenuItem.Text = "Выход"
         '
         'ContextMenuStrip2

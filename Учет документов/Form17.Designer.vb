@@ -58,9 +58,9 @@ Partial Class Form17
         '
         Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.None
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.МенюИсходящихToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(9, 0)
+        Me.MenuStrip1.Location = New System.Drawing.Point(9, 1)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(126, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(145, 24)
         Me.MenuStrip1.TabIndex = 12
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -68,21 +68,21 @@ Partial Class Form17
         '
         Me.МенюИсходящихToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ОбновитьToolStripMenuItem1, Me.ФильтрToolStripMenuItem, Me.ЭкспортWordToolStripMenuItem, Me.ЭкспортExcelToolStripMenuItem, Me.ToolStripMenuItem1, Me.ВыходToolStripMenuItem})
         Me.МенюИсходящихToolStripMenuItem.Name = "МенюИсходящихToolStripMenuItem"
-        Me.МенюИсходящихToolStripMenuItem.Size = New System.Drawing.Size(118, 20)
-        Me.МенюИсходящихToolStripMenuItem.Text = "Меню исходящих"
+        Me.МенюИсходящихToolStripMenuItem.Size = New System.Drawing.Size(137, 20)
+        Me.МенюИсходящихToolStripMenuItem.Text = "Меню Распоряжения"
         '
         'ОбновитьToolStripMenuItem1
         '
         Me.ОбновитьToolStripMenuItem1.Name = "ОбновитьToolStripMenuItem1"
         Me.ОбновитьToolStripMenuItem1.ShortcutKeys = System.Windows.Forms.Keys.F5
-        Me.ОбновитьToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.ОбновитьToolStripMenuItem1.Size = New System.Drawing.Size(151, 22)
         Me.ОбновитьToolStripMenuItem1.Text = "Обновить"
         '
         'ФильтрToolStripMenuItem
         '
         Me.ФильтрToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.УбратьКолонкуToolStripMenuItem, Me.ПоискПоНомеруToolStripMenuItem, Me.ВыключитьФильтрToolStripMenuItem})
         Me.ФильтрToolStripMenuItem.Name = "ФильтрToolStripMenuItem"
-        Me.ФильтрToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ФильтрToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.ФильтрToolStripMenuItem.Text = "Фильтр"
         '
         'УбратьКолонкуToolStripMenuItem
@@ -116,25 +116,25 @@ Partial Class Form17
         '
         Me.ЭкспортWordToolStripMenuItem.Image = Global.Учет_документов.My.Resources.Resources.Word
         Me.ЭкспортWordToolStripMenuItem.Name = "ЭкспортWordToolStripMenuItem"
-        Me.ЭкспортWordToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ЭкспортWordToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.ЭкспортWordToolStripMenuItem.Text = "Экспорт Word"
         '
         'ЭкспортExcelToolStripMenuItem
         '
         Me.ЭкспортExcelToolStripMenuItem.Image = Global.Учет_документов.My.Resources.Resources.Excel
         Me.ЭкспортExcelToolStripMenuItem.Name = "ЭкспортExcelToolStripMenuItem"
-        Me.ЭкспортExcelToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ЭкспортExcelToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.ЭкспортExcelToolStripMenuItem.Text = "Экспорт Excel"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(149, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(148, 6)
         '
         'ВыходToolStripMenuItem
         '
         Me.ВыходToolStripMenuItem.Name = "ВыходToolStripMenuItem"
-        Me.ВыходToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ВыходToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.ВыходToolStripMenuItem.Text = "Выход"
         '
         'ContextMenuStrip2
@@ -228,9 +228,9 @@ Partial Class Form17
         Me.ListView1.FullRowSelect = True
         Me.ListView1.GridLines = True
         Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(0, 0)
+        Me.ListView1.Location = New System.Drawing.Point(0, 25)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(870, 467)
+        Me.ListView1.Size = New System.Drawing.Size(870, 442)
         Me.ListView1.Sorting = System.Windows.Forms.SortOrder.Ascending
         Me.ListView1.TabIndex = 14
         Me.ListView1.UseCompatibleStateImageBehavior = False
@@ -241,8 +241,8 @@ Partial Class Form17
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(870, 467)
-        Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.ListView1)
+        Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form17"

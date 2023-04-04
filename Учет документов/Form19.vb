@@ -39,7 +39,7 @@ Public Class Form19
             Connector.Close()
             ListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize)
             For Each columnheader In Me.ListView1.Columns
-                columnheader.Width = -3
+                columnheader.Width = -2
             Next
             OtchetGurnal = "Успешная загрузка Доверенности " & DateString & "" & TimeString : ZapGurnal()
         Catch ex As Exception
@@ -53,7 +53,7 @@ Public Class Form19
         lvwColumnSorter = New ListViewColumnSorter()
         Me.ListView1.ListViewItemSorter = lvwColumnSorter
         Try
-            Dim Command As New OleDbCommand("Insert Into [Доверенности] ([Регистрационный номер], [Дата регистрации], [Кому выданна доверенность], [Куда выдана доверенность], [Срок действия], [Подпись, получившего доверенность] values ( '" & p1 & "', '" & p2 & "', '" & p3 & "', '" & p4 & "','" & p5 & "', '" & p6 & "')", Connector)
+            Dim Command As New OleDbCommand("Insert Into [Доверенности] ([Регистрационный номер], [Дата регистрации], [Кому выдана доверенность], [Куда выдана доверенность], [Срок действия], [Подпись, получившего доверенность]) values ( '" & p1 & "', '" & p2 & "', '" & p3 & "', '" & p4 & "','" & p5 & "', '" & p6 & "')", Connector)
             Connector.Open()
             Command.ExecuteNonQuery()
             Connector.Close()
@@ -65,7 +65,7 @@ Public Class Form19
             ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Подпись, получившего доверенность]")
             Form19_Load(Me, New EventArgs)
             For Each columnheader In Me.ListView1.Columns
-                columnheader.Width = -3
+                columnheader.Width = -2
             Next
             OtchetGurnal = "Успешное добавление записи Доверенности " & DateString & "" & TimeString : ZapGurnal()
         Catch ex As Exception
@@ -95,11 +95,11 @@ Public Class Form19
     End Sub
 
     Sub Удалить()
-        Dim МВох As DialogResult = MessageBox.Show("Yдaлить текущую запись", "Уведомление", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
+        Dim МВох As DialogResult = MessageBox.Show("Удaлить текущую запись", "Уведомление", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
         Try
             If МВох = DialogResult.No Then Exit Sub
             If МВох = DialogResult.Yes Then
-                Dim Command As New OleDbCommand("DELETE FROM [Доверенности] WHERE [Регистрационный номер] '" & ListView1.SelectedItems.Item(0).Text & "'", Connector)
+                Dim Command As New OleDbCommand("DELETE FROM [Доверенности] WHERE [Регистрационный номер]='" & ListView1.SelectedItems.Item(0).Text & "'", Connector)
                 Connector.Open()
                 Command.ExecuteNonQuery()
                 Connector.Close()
@@ -232,7 +232,7 @@ Public Class Form19
             Connector.Close()
             ListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize)
             For Each columnheader In Me.ListView1.Columns
-                columnheader.Width = -3
+                columnheader.Width = -2
             Next
             OtchetGurnal = "Выключение фильтра по номеру Доверенности " & DateString & " " & TimeString : ZapGurnal()
         Catch ex As Exception
@@ -329,7 +329,7 @@ Public Class Form19
             Connector.Close()
             ListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize)
             For Each columnheader In Me.ListView1.Columns
-                columnheader.Width = -3
+                columnheader.Width = -2
             Next
             OtchetGurnal = "Включен фильтр по дате Доверенности " & DateString & " " & TimeString : ZapGurnal()
         Catch ex As Exception

@@ -14,12 +14,12 @@ Public Class Form7
             ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Дaтa регистрации]")
             ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Kpaткoe содержание]")
             ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Koличecтвo листов]")
-            ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Исnолнитель]")
+            ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Исполнитель]")
             ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Kyдa передан приказ]")
             ListView1.Items.Item(ListView1.Items.Count - 1).SubItems.Add("[Oтмeткa о помещении в дело]")
             Form7_Load(Me, New EventArgs)
             For Each columnheader In Me.ListView1.Columns
-                columnheader.Width = -3
+                columnheader.Width = -2
             Next
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -45,22 +45,23 @@ Public Class Form7
     End Sub
 
     Sub Удалить()
-        Dim МВох As DialogResult = MessageBox.Show("Yдaлить текущую запись", "Уведомление", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
+        Dim МВох As DialogResult = MessageBox.Show("Удaлить текущую запись", "Уведомление", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
         Try
             If МВох = DialogResult.No Then Exit Sub
             If МВох = DialogResult.Yes Then
-                Dim Command As New OleDbCommand("DELETE FROM [Приказы] WHERE [Регистрационный номер] '" & ListView1.SelectedItems.Item(0).Text & "'", Connector)
+                Dim Command As New OleDbCommand("DELETE FROM [Приказы] WHERE [Регистрационный номер]='" & ListView1.SelectedItems.Item(0).Text & "'", Connector)
                 Connector.Open()
                 Command.ExecuteNonQuery()
                 Connector.Close()
                 ListView1.SelectedItems.Item(0).Remove()
                 Form7_Load(Me, New EventArgs)
-                MessageBox.Show("Зanиcь была успешна удалена из БД", "Операция успешна завершина", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Запись была успешна удалена из БД", "Операция успешна завершина", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
     End Sub
+
     Private Sub Form7_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.MdiParent = MDIParent1
         Prava()
@@ -100,7 +101,7 @@ Public Class Form7
             Connector.Close()
             ListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize)
             For Each columnheader In Me.ListView1.Columns
-                columnheader.Width = -3
+                columnheader.Width = -2
             Next
         Catch ex As Exception
             Connector.Close()
@@ -108,11 +109,11 @@ Public Class Form7
         End Try
     End Sub
 
-    Private Sub ОбновитьToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ОбновитьToolStripMenuItem.Click
+    Private Sub ОбновитьToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ОбновитьToolStripMenuItem.Click, ToolStripMenuItem3.Click
         Form7_Load(Me, New EventArgs)
     End Sub
 
-    Private Sub УбратьКолонкуToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles УбратьКолонкуToolStripMenuItem.Click
+    Private Sub УбратьКолонкуToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles УбратьКолонкуToolStripMenuItem.Click, ToolStripMenuItem5.Click
         Dim Kolonka As Integer
         Try
             Kolonka = InputBox("Введите номер колонки которую нужно скрыть", "Запрос")
@@ -122,7 +123,7 @@ Public Class Form7
         End Try
     End Sub
 
-    Private Sub ПоискПоНомеруToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ПоискПоНомеруToolStripMenuItem.Click
+    Private Sub ПоискПоНомеруToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ПоискПоНомеруToolStripMenuItem.Click, ToolStripMenuItem6.Click
         Dim Nomer As String
         Try
             Nomer = InputBox("Введите номер для поиска", "Запрос")
@@ -160,14 +161,14 @@ Public Class Form7
             Connector.Close()
             ListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize)
             For Each columnheader In Me.ListView1.Columns
-                columnheader.Width = -3
+                columnheader.Width = -2
             Next
         Catch ex As Exception
             MessageBox.Show("Cлeдyeт вводить только числа", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
-    Private Sub ПоискПоДатеToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ПоискПоДатеToolStripMenuItem.Click
+    Private Sub ПоискПоДатеToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ПоискПоДатеToolStripMenuItem.Click, ToolStripMenuItem7.Click
         Dim Nomer As String
         Try
             Nomer = InputBox("Введите дату поиска", "Запрос")
@@ -205,24 +206,24 @@ Public Class Form7
             Connector.Close()
             ListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize)
             For Each columnheader In Me.ListView1.Columns
-                columnheader.Width = -3
+                columnheader.Width = -2
             Next
         Catch ех As Exception
             MessageBox.Show("Cлeдyeт вводить только числа", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
-    Private Sub ВыключитьФильтрToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ВыключитьФильтрToolStripMenuItem.Click
+    Private Sub ВыключитьФильтрToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ВыключитьФильтрToolStripMenuItem.Click, ToolStripMenuItem8.Click
         Form7_Load(Me, New EventArgs)
     End Sub
 
-    Private Sub ЭкспортWordToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ЭкспортWordToolStripMenuItem.Click
+    Private Sub ЭкспортWordToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ЭкспортWordToolStripMenuItem.Click, ToolStripMenuItem9.Click
         Try
             Dim Дата As String = Format(Now, "d ММММ уууу")
             Dim W = New Word.Application
             W.VisiЫe = True
             W.Documents.Add()
-            W.Selection.TypeText("Bыnиcкa из БД: " & Дата & Chr(13) & Chr(10))
+            W.Selection.TypeText("Выписка из БД: " & Дата & Chr(13) & Chr(10))
             For i As Short = 0 To ListView1.Items.Count - 1
                 W.Selection.TypeText(ListView1.Items(i).SubItems.Item(0).Text & " " & ListView1.Items(i).SubItems.Item(1).Text & " " & ListView1.Items(i).SubItems.Item(2).Text & " " & ListView1.Items(i).SubItems.Item(3).Text & " " & ListView1.Items(i).SubItems.Item(4).Text & "" & ListView1.Items(i).SubItems.Item(5).Text & "" & ListView1.Items(i).SubItems.Item(6).Text & " " & ListView1.Items(i).SubItems.Item(7).Text & " " & ListView1.Items(i).SubItems.Item(8).Text & Chr(13) & Chr(10))
             Next i
@@ -234,7 +235,7 @@ Public Class Form7
         End Try
     End Sub
 
-    Private Sub ЭкспортExcelToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ЭкспортExcelToolStripMenuItem.Click
+    Private Sub ЭкспортExcelToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ЭкспортExcelToolStripMenuItem.Click, ToolStripMenuItem10.Click
         Try
             Dim myXL As Excel.Application, myWB As Excel.Workbook, myWS As Excel.Worksheet
             Dim i As Integer
@@ -279,12 +280,16 @@ Public Class Form7
         End Try
     End Sub
 
-    Private Sub ВыходToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ВыходToolStripMenuItem.Click
+    Private Sub ВыходToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ВыходToolStripMenuItem.Click, ToolStripMenuItem11.Click
         Close()
     End Sub
 
     Private Sub УдалитьЗаписьToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles УдалитьЗаписьToolStripMenuItem.Click
         Удалить()
+    End Sub
+
+    Private Sub ContextMenuStrip2_Opening(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles ContextMenuStrip2.Opening
+        Form7_Load(Me, New EventArgs)
     End Sub
 
     Private Sub ОбновитьToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ОбновитьToolStripMenuItem1.Click

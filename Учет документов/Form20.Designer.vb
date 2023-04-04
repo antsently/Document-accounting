@@ -23,14 +23,12 @@ Partial Class Form20
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form20))
-        Me.TextBox14 = New System.Windows.Forms.TextBox()
         Me.TextBox13 = New System.Windows.Forms.TextBox()
         Me.TextBox12 = New System.Windows.Forms.TextBox()
         Me.TextBox11 = New System.Windows.Forms.TextBox()
         Me.TextBox10 = New System.Windows.Forms.TextBox()
         Me.TextBox9 = New System.Windows.Forms.TextBox()
         Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
@@ -42,15 +40,6 @@ Partial Class Form20
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.SuspendLayout()
         '
-        'TextBox14
-        '
-        Me.TextBox14.Enabled = False
-        Me.TextBox14.Location = New System.Drawing.Point(0, 124)
-        Me.TextBox14.Name = "TextBox14"
-        Me.TextBox14.Size = New System.Drawing.Size(300, 20)
-        Me.TextBox14.TabIndex = 177
-        Me.TextBox14.Text = "Отметка о помещении в дело"
-        '
         'TextBox13
         '
         Me.TextBox13.Enabled = False
@@ -58,7 +47,7 @@ Partial Class Form20
         Me.TextBox13.Name = "TextBox13"
         Me.TextBox13.Size = New System.Drawing.Size(300, 20)
         Me.TextBox13.TabIndex = 176
-        Me.TextBox13.Text = "Куда передан приказ"
+        Me.TextBox13.Text = "Подпись, получившего доверенность"
         '
         'TextBox12
         '
@@ -67,7 +56,7 @@ Partial Class Form20
         Me.TextBox12.Name = "TextBox12"
         Me.TextBox12.Size = New System.Drawing.Size(300, 20)
         Me.TextBox12.TabIndex = 175
-        Me.TextBox12.Text = "Исполнитель"
+        Me.TextBox12.Text = "Срок действия"
         '
         'TextBox11
         '
@@ -76,7 +65,7 @@ Partial Class Form20
         Me.TextBox11.Name = "TextBox11"
         Me.TextBox11.Size = New System.Drawing.Size(300, 20)
         Me.TextBox11.TabIndex = 174
-        Me.TextBox11.Text = "Количество листов"
+        Me.TextBox11.Text = "Куда выдана доверенность"
         '
         'TextBox10
         '
@@ -85,7 +74,7 @@ Partial Class Form20
         Me.TextBox10.Name = "TextBox10"
         Me.TextBox10.Size = New System.Drawing.Size(300, 20)
         Me.TextBox10.TabIndex = 173
-        Me.TextBox10.Text = "Краткое содержание"
+        Me.TextBox10.Text = "Кому выдана доверенность" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'TextBox9
         '
@@ -106,14 +95,6 @@ Partial Class Form20
         Me.TextBox8.Size = New System.Drawing.Size(300, 20)
         Me.TextBox8.TabIndex = 171
         Me.TextBox8.Text = "Регистрационный номер"
-        '
-        'TextBox7
-        '
-        Me.TextBox7.Location = New System.Drawing.Point(300, 124)
-        Me.TextBox7.Margin = New System.Windows.Forms.Padding(0)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(300, 20)
-        Me.TextBox7.TabIndex = 170
         '
         'TextBox6
         '
@@ -167,7 +148,7 @@ Partial Class Form20
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(431, 157)
+        Me.Button2.Location = New System.Drawing.Point(444, 127)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 162
@@ -176,7 +157,8 @@ Partial Class Form20
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(512, 157)
+        Me.Button1.Location = New System.Drawing.Point(522, 127)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(0, 0, 3, 3)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 161
@@ -196,16 +178,14 @@ Partial Class Form20
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(600, 184)
+        Me.ClientSize = New System.Drawing.Size(600, 155)
         Me.Controls.Add(Me.DateTimePicker2)
-        Me.Controls.Add(Me.TextBox14)
         Me.Controls.Add(Me.TextBox13)
         Me.Controls.Add(Me.TextBox12)
         Me.Controls.Add(Me.TextBox11)
         Me.Controls.Add(Me.TextBox10)
         Me.Controls.Add(Me.TextBox9)
         Me.Controls.Add(Me.TextBox8)
-        Me.Controls.Add(Me.TextBox7)
         Me.Controls.Add(Me.TextBox6)
         Me.Controls.Add(Me.TextBox5)
         Me.Controls.Add(Me.TextBox4)
@@ -214,20 +194,19 @@ Partial Class Form20
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Form20"
         Me.Text = "Доверенности"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents TextBox14 As TextBox
     Friend WithEvents TextBox13 As TextBox
     Friend WithEvents TextBox12 As TextBox
     Friend WithEvents TextBox11 As TextBox
     Friend WithEvents TextBox10 As TextBox
     Friend WithEvents TextBox9 As TextBox
     Friend WithEvents TextBox8 As TextBox
-    Friend WithEvents TextBox7 As TextBox
     Friend WithEvents TextBox6 As TextBox
     Friend WithEvents TextBox5 As TextBox
     Friend WithEvents TextBox4 As TextBox
