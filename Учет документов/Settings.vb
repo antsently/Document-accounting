@@ -2,16 +2,6 @@
 Imports Microsoft.Office.Interop
 
 Public Class Settings
-    Dim openFileDialog1 As New OpenFileDialog()
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        openFileDialog1.ShowDialog()
-        If openFileDialog1.FileName <> "" Then
-            DataBaseFileName = openFileDialog1.FileName
-            My.Settings.Save()
-        End If
-    End Sub
-
     Private Sub ListBox1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles ListBox1.MouseDoubleClick
         Try
             ToolStripButton2_Click(Me, New EventArgs)
@@ -242,4 +232,20 @@ Public Class Settings
             OtchetGurnal = "Ошибка " & ex.Message & DateString & " " & TimeString : ZapGurnal()
         End Try
     End Sub
+
+    Dim openFileDialog1 As New OpenFileDialog()
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim openFileDialog1 As New OpenFileDialog()
+
+        openFileDialog1.Filter = "Access Database|*.mdb"
+        openFileDialog1.Title = "Выберите базу данных"
+
+        If openFileDialog1.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+            Dim selectedFileName As String = openFileDialog1.FileName
+            DataBaseFileName = selectedFileName
+            My.Settings.Save()
+        End If
+    End Sub
+
 End Class

@@ -128,8 +128,10 @@ Public Class Form1
     End Sub
 
     Private Sub ToolStripButton3_Click(sender As Object, e As EventArgs) Handles ToolStripButton3.Click
-        OtchetGurnal = "Закрыта книга исходящие " & DateString & " " & TimeString : ZapGurnal()
-        Close()
+        ToolStripTextBox1.Text = ""
+        ToolStripComboBox1.Text = ToolStripComboBox1.Items(0)
+        Form1_Load(Me, New EventArgs)
+        OtchetGurnal = "Выключение фильтра книга исходящие " & DateString & " " & TimeString : ZapGurnal()
     End Sub
 
     Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click

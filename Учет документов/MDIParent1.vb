@@ -3,13 +3,14 @@ Imports Microsoft.Office.Interop
 Public Class MDIParent1
     Private Sub MDIParent1_ContextMenuStripChanged(sender As Object, e As EventArgs) Handles Me.ContextMenuStripChanged
         ToolStripStatusLabel2.Text = Now.ToLongDateString
-        ToolStripStatusLabel4.Text = Now.ToLongTimeString
-        Dim DataReader1 As OleDbDataReader
-        Dim Command1 As New OleDbCommand("SELECT * FROM Параметры", Connector)
-        Connector.Open()
-        DataReader1 = Command1.ExecuteReader
-        While DataReader1.Read() = True
-            SettingsGurnal = DataReader1.GetValue(0)
+        ToolStripStatusLabel4.Text = Now.ToLongTimeString 'Устанавливается значение текстового свойства для StatusLabel2,4 на текущую дату, время в длинном формате.
+        Dim DataReader1 As OleDbDataReader 'Задаем переменную, которая создает экземпляр объекта OleDbDataReader с именем DataReader1, 
+        'который открывает потом для чтения данных(в нашем случае чтения данных из базы данных)
+        Dim Command1 As New OleDbCommand("SELECT * FROM Параметры", Connector) 'Запрос(SQL) для выбора всех полей из таблицы Параметры.
+        Connector.Open() 'подключение к БД
+        DataReader1 = Command1.ExecuteReader 'Сохранение результата в DataReader1
+        While DataReader1.Read() = True 'Цикл, который будет работать пока в DataReader1, есть доступные строки для чтения.
+            SettingsGurnal = DataReader1.GetValue(0) 'Чтение элементов с указанным индексом из выбранных переменных.
             SettingsOprPolzovatelya = DataReader1.GetValue(1)
             SettingsObnovlenie = DataReader1.GetValue(2)
             SettingsIP = DataReader1.GetValue(3)
@@ -17,7 +18,7 @@ Public Class MDIParent1
             SettingsVostanovlenieRezervnoiKopii = DataReader1.GetValue(5)
             SettingsOtkatBD = DataReader1.GetValue(6)
             SettingsAutoObnovlenie = DataReader1.GetValue(7)
-        End While
+        End While 'конец цикла
         DataReader1.Close()
         Connector.Close()
         Prava()

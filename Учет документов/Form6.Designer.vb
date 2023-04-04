@@ -26,7 +26,6 @@ Partial Class Form6
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
@@ -45,6 +44,7 @@ Partial Class Form6
         Me.TextBox18 = New System.Windows.Forms.TextBox()
         Me.TextBox19 = New System.Windows.Forms.TextBox()
         Me.TextBox20 = New System.Windows.Forms.TextBox()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.SuspendLayout()
         '
         'Button1
@@ -83,14 +83,6 @@ Partial Class Form6
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(277, 20)
         Me.TextBox1.TabIndex = 3
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(295, 20)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(0)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(300, 20)
-        Me.TextBox2.TabIndex = 4
         '
         'TextBox3
         '
@@ -252,11 +244,19 @@ Partial Class Form6
         Me.TextBox20.TabIndex = 23
         Me.TextBox20.Text = "Примечание"
         '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Location = New System.Drawing.Point(295, 20)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(300, 20)
+        Me.DateTimePicker1.TabIndex = 24
+        '
         'Form6
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(595, 254)
+        Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.TextBox20)
         Me.Controls.Add(Me.TextBox19)
         Me.Controls.Add(Me.TextBox18)
@@ -275,7 +275,6 @@ Partial Class Form6
         Me.Controls.Add(Me.TextBox5)
         Me.Controls.Add(Me.TextBox4)
         Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
@@ -293,7 +292,6 @@ Partial Class Form6
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents TextBox5 As TextBox
@@ -312,4 +310,5 @@ Partial Class Form6
     Friend WithEvents TextBox18 As TextBox
     Friend WithEvents TextBox19 As TextBox
     Friend WithEvents TextBox20 As TextBox
+    Friend WithEvents DateTimePicker1 As DateTimePicker
 End Class

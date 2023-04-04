@@ -31,9 +31,7 @@ Partial Class Kontrol
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripComboBox1 = New System.Windows.Forms.ToolStripComboBox()
         Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
         Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
@@ -48,6 +46,7 @@ Partial Class Kontrol
         Me.ЭкспортExcelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
         Me.ВыходToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripComboBox1 = New System.Windows.Forms.ToolStripComboBox()
         Me.ContextMenuStrip2.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
@@ -95,9 +94,9 @@ Partial Class Kontrol
         Me.ListView1.FullRowSelect = True
         Me.ListView1.GridLines = True
         Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(0, 0)
+        Me.ListView1.Location = New System.Drawing.Point(0, 25)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(684, 361)
+        Me.ListView1.Size = New System.Drawing.Size(684, 336)
         Me.ListView1.Sorting = System.Windows.Forms.SortOrder.Ascending
         Me.ListView1.TabIndex = 25
         Me.ListView1.UseCompatibleStateImageBehavior = False
@@ -105,22 +104,12 @@ Partial Class Kontrol
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripComboBox1, Me.ToolStripTextBox1, Me.ToolStripButton3})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton2, Me.ToolStripComboBox1, Me.ToolStripTextBox1, Me.ToolStripButton3})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(684, 25)
         Me.ToolStrip1.TabIndex = 27
         Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'ToolStripButton1
-        '
-        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton1.Image = Global.Учет_документов.My.Resources.Resources.Добавить
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(23, 22)
-        Me.ToolStripButton1.Text = "ToolStripButton1"
-        Me.ToolStripButton1.ToolTipText = "Добавить запись в БД"
         '
         'ToolStripButton2
         '
@@ -131,14 +120,6 @@ Partial Class Kontrol
         Me.ToolStripButton2.Size = New System.Drawing.Size(23, 22)
         Me.ToolStripButton2.Text = "ToolStripButton2"
         Me.ToolStripButton2.ToolTipText = "Обновить таблицу"
-        '
-        'ToolStripComboBox1
-        '
-        Me.ToolStripComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ToolStripComboBox1.Items.AddRange(New Object() {"№ п/п ", "№ и дата договора", "Поставщик, исполнитель, подрядчик", "Предмет договора", "Сумма договора", "Срок исполнения обязательств", "Количество листов", "Наличие приложений", "Инициатор(ответственный)", "Примечание"})
-        Me.ToolStripComboBox1.Name = "ToolStripComboBox1"
-        Me.ToolStripComboBox1.Size = New System.Drawing.Size(121, 25)
-        Me.ToolStripComboBox1.ToolTipText = "Выбрать поля фильтра"
         '
         'ToolStripTextBox1
         '
@@ -162,7 +143,7 @@ Partial Class Kontrol
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.МенюИсходящихToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(9, 1)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(209, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(117, 24)
         Me.MenuStrip1.TabIndex = 26
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -178,14 +159,14 @@ Partial Class Kontrol
         Me.ОбновитьToolStripMenuItem.Image = Global.Учет_документов.My.Resources.Resources.Обновить
         Me.ОбновитьToolStripMenuItem.Name = "ОбновитьToolStripMenuItem"
         Me.ОбновитьToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5
-        Me.ОбновитьToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ОбновитьToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.ОбновитьToolStripMenuItem.Text = "Обновить"
         '
         'ФильтрToolStripMenuItem
         '
         Me.ФильтрToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.УбратьКолонкуToolStripMenuItem, Me.ПоискПоНомеруToolStripMenuItem, Me.ВыключитьФильтрToolStripMenuItem})
         Me.ФильтрToolStripMenuItem.Name = "ФильтрToolStripMenuItem"
-        Me.ФильтрToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ФильтрToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.ФильтрToolStripMenuItem.Text = "Фильтр"
         '
         'УбратьКолонкуToolStripMenuItem
@@ -219,34 +200,40 @@ Partial Class Kontrol
         '
         Me.ЭкспортWordToolStripMenuItem.Image = Global.Учет_документов.My.Resources.Resources.Word
         Me.ЭкспортWordToolStripMenuItem.Name = "ЭкспортWordToolStripMenuItem"
-        Me.ЭкспортWordToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ЭкспортWordToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.ЭкспортWordToolStripMenuItem.Text = "Экспорт Word"
         '
         'ЭкспортExcelToolStripMenuItem
         '
         Me.ЭкспортExcelToolStripMenuItem.Image = Global.Учет_документов.My.Resources.Resources.Excel
         Me.ЭкспортExcelToolStripMenuItem.Name = "ЭкспортExcelToolStripMenuItem"
-        Me.ЭкспортExcelToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ЭкспортExcelToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.ЭкспортExcelToolStripMenuItem.Text = "Экспорт Excel"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(149, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(148, 6)
         '
         'ВыходToolStripMenuItem
         '
         Me.ВыходToolStripMenuItem.Name = "ВыходToolStripMenuItem"
-        Me.ВыходToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ВыходToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.ВыходToolStripMenuItem.Text = "Выход"
+        '
+        'ToolStripComboBox1
+        '
+        Me.ToolStripComboBox1.Items.AddRange(New Object() {"№ п/п", "№ и дата договора", "Поставщик, исполнитель, подрядчик", "Инициатор (ответственный)", "Дата исполнения"})
+        Me.ToolStripComboBox1.Name = "ToolStripComboBox1"
+        Me.ToolStripComboBox1.Size = New System.Drawing.Size(121, 25)
         '
         'Kontrol
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(684, 361)
-        Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.ListView1)
+        Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
@@ -283,9 +270,8 @@ Partial Class Kontrol
     Friend WithEvents ОбновитьToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents ToolStripButton3 As ToolStripButton
+    Friend WithEvents ToolStripButton2 As ToolStripButton
+    Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents ToolStripTextBox1 As ToolStripTextBox
     Friend WithEvents ToolStripComboBox1 As ToolStripComboBox
-    Friend WithEvents ToolStripButton2 As ToolStripButton
-    Friend WithEvents ToolStripButton1 As ToolStripButton
-    Friend WithEvents ToolStrip1 As ToolStrip
 End Class

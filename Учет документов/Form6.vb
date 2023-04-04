@@ -3,11 +3,11 @@
         Me.MdiParent = MDIParent1
         Prava()
         If Me.Text = "Добавление записи" Then
-            TextBox2.Text = Now.ToLongDateString
+            DateTimePicker1.Text = Now.ToLongDateString
             TextBox1.Text = CountForm3 + 1
         Else
             TextBox1.Text = p1
-            TextBox2.Text = p2
+            DateTimePicker1.Value = p2
             TextBox3.Text = p3
             TextBox4.Text = p4
             TextBox5.Text = p5
@@ -39,11 +39,11 @@ MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If Me.Text = "Добавление записи" Then
-            If TextBox1.Text = "" Or TextBox2.Text = "" Or TextBox3.Text = "" Or TextBox4.Text = "" Or TextBox5.Text = "" Or TextBox6.Text = "" Or TextBox7.Text = "" Or TextBox8.Text = "" Or TextBox9.Text = "" Or TextBox10.Text = "" Then
+            If TextBox1.Text = "" Or DateTimePicker1.Text = "" Or TextBox3.Text = "" Or TextBox4.Text = "" Or TextBox5.Text = "" Or TextBox6.Text = "" Or TextBox7.Text = "" Or TextBox8.Text = "" Or TextBox9.Text = "" Or TextBox10.Text = "" Then
                 MessageBox.Show("He все строки заnолненны! ! !", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Else
                 p1 = TextBox1.Text
-                p2 = TextBox2.Text
+                p2 = DateTimePicker1.Value
                 p3 = TextBox3.Text
                 p4 = TextBox4.Text
                 p5 = TextBox5.Text
@@ -57,7 +57,7 @@ MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
             End If
         Else
             p1 = TextBox1.Text
-            p2 = TextBox2.Text
+            p2 = DateTimePicker1.Value
             p3 = TextBox3.Text
             p4 = TextBox4.Text
             p5 = TextBox5.Text
